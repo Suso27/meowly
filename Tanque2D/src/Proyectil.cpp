@@ -49,3 +49,7 @@ void Proyectil::setPos(Vector2D tpos) {
 //bool Proyectil::getDisparado() {
 //	return disparado;
 //}
+
+void Proyectil::setDaño(int dmg) {
+	daño = dmg;
+}

@@ -47,6 +47,16 @@ void Mundo::tecla(unsigned char key)
 		tankJ.Dispara();
 		break;
 	}
+	switch (key) //solo para probar el daño
+	{
+	case '-':
+		tankJ.setDaño(1);
+		break;
+	case '+':
+		tankJ.setDaño(10);
+		break;
+	}
+
 }
 
 void Mundo::teclaEspecial(unsigned char key)

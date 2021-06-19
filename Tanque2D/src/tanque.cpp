@@ -75,3 +75,8 @@ void tanque::Dispara() {
 Vector2D tanque::getPos() {
 	return posicion;
 }
+
+void tanque::setDaño(int dmg)
+{
+	proyectiles.setDaño(dmg);
+}

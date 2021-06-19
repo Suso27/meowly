@@ -9,6 +9,8 @@ protected:
 
 	float municion;
 	float vel;
+	int vida;
+
 	ColorRGB color;
 
 	ListaProyectiles proyectiles;
@@ -29,5 +31,6 @@ public:
 	void setApuntado(float x, float y);
 	void setApuntado(Vector2D);
 	Vector2D getPos();
+	void setDaño(int dmg);
 };
 

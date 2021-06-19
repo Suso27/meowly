@@ -19,5 +19,6 @@ public:
 	static void rebote(tanque& t, Caja& c);
 	//static void rebote(tanque& t, ListaCajas l);
 	//static void rebote(ListaCajas);
+	static bool colision(Proyectil p, tanque t);
 };
 

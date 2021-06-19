@@ -10,7 +10,7 @@ private:
 	Vector2D velocidad;
 	//bool disparado = false;//para saber si se ha disparado o no
 	//inecesario si se crea en en momento que se dispara
-
+	int daño;
 public:
 	Proyectil();
 	Proyectil(Vector2D,Vector2D);
@@ -20,5 +20,6 @@ public:
 	void setPos(Vector2D);
 	//void setVel(Vector2D apuntando);
 	//bool getDisparado();//también innecesario
+	void setDaño(int dmg);
 };
 

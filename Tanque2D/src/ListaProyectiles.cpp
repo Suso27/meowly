@@ -2,6 +2,7 @@
 
 ListaProyectiles::ListaProyectiles()
 {
+	daño = 1;
 	numero = 0;
 	municion = 10;
 	for (int i = 0; i < MAX_PROYECTILES; i++)
@@ -15,6 +16,7 @@ bool ListaProyectiles::agregar(Proyectil* d)
 	if (municion>0)
 	{
 		lista[numero++] = d;
+		lista[numero-1]->setDaño(daño);
 		municion -= 1;
 		return true;
 	}
@@ -69,3 +71,29 @@ void ListaProyectiles::setPos(Vector2D pos)
 void ListaProyectiles::setMunicion(int n) {
 	municion = n;
 }
+
+void ListaProyectiles::eliminar(int index)
+{
+	if ((index < 0) || (index >= numero))
+		return;
+	delete lista[index];
+	numero--;
+	for (int i = index; i < numero; i++)
+		lista[i] = lista[i + 1];
+}
+
+void ListaProyectiles::eliminar(Proyectil* p)
+{
+	for (int i = 0; i < numero; i++)
+		if (lista[i] == p)
+		{
+			eliminar(i);
+			return;
+		}
+}
+
+void ListaProyectiles::setDaño(int dmg)
+{
+	daño = dmg;
+}
+
