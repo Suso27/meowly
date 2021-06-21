@@ -21,5 +21,6 @@ public:
 	//void setVel(Vector2D apuntando);
 	//bool getDisparado();//también innecesario
 	void setDaño(int dmg);
+	Vector2D getPos();
 };
 

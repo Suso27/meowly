@@ -9,6 +9,7 @@ void tanqueJugador::Inicializa() {
 	vel = 0.01;
 	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(132, 134, 59);//233,208,154
+	vida = 3;
 }
 
 

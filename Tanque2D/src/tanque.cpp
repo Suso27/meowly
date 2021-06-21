@@ -80,3 +80,4 @@ void tanque::setDaño(int dmg)
 {
 	proyectiles.setDaño(dmg);
 }
+

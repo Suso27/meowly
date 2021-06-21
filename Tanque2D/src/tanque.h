@@ -32,5 +32,7 @@ public:
 	void setApuntado(Vector2D);
 	Vector2D getPos();
 	void setDaño(int dmg);
+
+	//Proyectil* colision(tanque& t); //probar a poner en lista tanques
 };
 

@@ -13,4 +13,5 @@ void tanqueEnemigo::Inicializa() {
 	vel = 0.01;
 	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(76, 76, 95);
+	vida = 1;
 }

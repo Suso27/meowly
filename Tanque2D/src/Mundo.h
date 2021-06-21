@@ -19,7 +19,8 @@ private:
 	Caja caja;
 	ListaCajas cajas;
 	//ListaCajas cajas;
-
+	Objeto objeto1;
+	Objeto objeto2;
 public: 
 	Mundo();
 	void tecla(unsigned char key);

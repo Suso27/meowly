@@ -1,5 +1,5 @@
 #include "ListaProyectiles.h"
-
+#include "Interaccion.h"
 ListaProyectiles::ListaProyectiles()
 {
 	daño = 1;
@@ -58,9 +58,9 @@ void ListaProyectiles::dibuja()
 		lista[i]->dibuja();
 }
 
-void ListaProyectiles::colision()
+/*void ListaProyectiles::colision()
 {
-}
+}*/
 
 void ListaProyectiles::setPos(Vector2D pos)
 {
@@ -97,3 +97,21 @@ void ListaProyectiles::setDaño(int dmg)
 	daño = dmg;
 }
 
+//Proyectil* ListaProyectiles::colision(tanque &t)
+
+int ListaProyectiles::getNum() {
+	return numero;
+}
+
+Proyectil* ListaProyectiles::getElem(int n) {
+	return lista[n];
+}
+
+/*Proyectil* ListaProyectiles::colision(tanque &t) {
+	for (int i = 0; i < numero; i++) {
+		if (Interaccion::colision(*(lista[i]), t)) {
+			return lista[i];
+		}
+	}
+	return 0;
+}*/

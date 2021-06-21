@@ -53,3 +53,7 @@ void Proyectil::setPos(Vector2D tpos) {
 void Proyectil::setDaño(int dmg) {
 	daño = dmg;
 }
+
+Vector2D Proyectil::getPos(){
+	return posicion;
+}

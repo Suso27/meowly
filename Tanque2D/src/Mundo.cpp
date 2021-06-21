@@ -16,6 +16,8 @@ void Mundo::dibuja()
 	tankE.Dibuja();
 	caja.Dibuja();
 	cajas.Dibuja();
+	objeto1.dibuja();
+	objeto2.dibuja();
 }
 
 void Mundo::mueve()
@@ -37,6 +39,7 @@ void Mundo::inicializa()
 	tankE.Inicializa();
 	caja.Inicializa(-0.04f, 0.2f, 0.04f,-0.2f);
 	cajas.Inicializa();
+
 }
 
 void Mundo::tecla(unsigned char key)

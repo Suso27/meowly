@@ -1,6 +1,6 @@
 #include "Interaccion.h"
 #include <math.h>
-
+#include <cmath>
 Interaccion::Interaccion() {};
 
 
@@ -63,3 +63,11 @@ void Interaccion::rebote(tanque& t, Caja& c) {
 //	}
 //}
 
+/*bool Interaccion::colision(Proyectil p, tanque t){
+	Vector2D pos = p.getPos();
+	if ((pos.x > t.getPos().x - 0.05f) && (pos.x < t.getPos().x + 0.05f) && (pos.y > t.getPos().y - 0.05f) && (pos.x < t.getPos().y + 0.05f)) {
+		return true;
+	}
+	else 
+		return false;
+}*/
