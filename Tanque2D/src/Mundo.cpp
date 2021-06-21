@@ -47,12 +47,7 @@ void Mundo::inicializa()
 	caja.Inicializa(-0.04f, 0.2f, 0.04f,-0.2f);
 	cajas.Inicializa();
 
-	for (int i = 0; i < 6; i++) //para probar la generacion de objetos
-	{
-		Objeto* aux = new Objeto;
-		//aux->setRadio(0.75 + i * 0.25);
-		objetos.agregar(aux); // agregar a la lista 
-	}
+	
 }
 
 void Mundo::tecla(unsigned char key)
@@ -117,6 +112,16 @@ void Mundo::setRaton(int x, int y) {
 	raton.x = (x - ANCHO/2)/ESCALA;
 	raton.y = (ALTO/2 - y) / ESCALA;
 
+}
+
+void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
+{
+	//for (int i = 0; i < 6; i++) //para probar la generacion de objetos
+	//{
+		Objeto* aux = new Objeto;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	//}
 }
 
 

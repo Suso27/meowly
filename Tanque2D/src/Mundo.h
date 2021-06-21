@@ -30,4 +30,5 @@ public:
 	void dibuja();
 	void teclaEspecial(unsigned char);
 	void setRaton(int x, int y);
+	void crearObjeto();
 };
