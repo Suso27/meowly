@@ -57,6 +57,13 @@ void Interaccion::rebote(tanque& t, Caja& c) {
 	rebote(t.proyectiles, c);
 }
 
+bool Interaccion::colision(Objeto o, tanqueJugador j)
+{
+	float dist = o.distancia(j.getPos());
+	if (dist < 0.07f) return true;
+	return false;
+}
+
 //void Interaccion::rebote(tanque& t, ListaCajas l) {
 //	for (int i = 0; i < l.numero; i++) {
 //		rebote(t, *l[i]);
@@ -71,3 +78,4 @@ void Interaccion::rebote(tanque& t, Caja& c) {
 	else 
 		return false;
 }*/
+

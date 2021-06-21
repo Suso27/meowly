@@ -4,6 +4,9 @@
 #include <math.h>
 
 Mundo::Mundo(){}
+Mundo::~Mundo() {
+	objetos.destruirContenido();
+}
 
 void Mundo::dibuja()
 {        
@@ -16,8 +19,7 @@ void Mundo::dibuja()
 	tankE.Dibuja();
 	caja.Dibuja();
 	cajas.Dibuja();
-	objeto1.dibuja();
-	objeto2.dibuja();
+	objetos.Dibuja();
 }
 
 void Mundo::mueve()
@@ -31,6 +33,11 @@ void Mundo::mueve()
 		Interaccion::rebote(tankJ, *cajas[i]);
 	}
 
+
+	Objeto* aux = objetos.colision(tankJ);
+	if (aux != 0)//si alguna esfera ha chocado
+		objetos.eliminar(aux);
+
 }
 
 void Mundo::inicializa()
@@ -40,6 +47,12 @@ void Mundo::inicializa()
 	caja.Inicializa(-0.04f, 0.2f, 0.04f,-0.2f);
 	cajas.Inicializa();
 
+	for (int i = 0; i < 6; i++) //para probar la generacion de objetos
+	{
+		Objeto* aux = new Objeto;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	}
 }
 
 void Mundo::tecla(unsigned char key)

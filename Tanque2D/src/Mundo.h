@@ -5,7 +5,7 @@
 #include "Pared.h"
 #include "Caja.h"
 #include "ListaCajas.h"
-
+#include "ListaObjetos.h"
 #define ALTO 800.0F
 #define ANCHO 1600.0F
 #define ESCALA 200.0F
@@ -18,11 +18,12 @@ private:
 	tanqueEnemigo tankE;
 	Caja caja;
 	ListaCajas cajas;
-	//ListaCajas cajas;
-	Objeto objeto1;
-	Objeto objeto2;
+	ListaObjetos objetos;
+	//Objeto objeto1;
+	//Objeto objeto2;
 public: 
 	Mundo();
+	~Mundo();
 	void tecla(unsigned char key);
 	void inicializa();
 	void mueve();

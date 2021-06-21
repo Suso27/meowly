@@ -14,5 +14,6 @@ public:
 	void setPos(Vector2D pos);
 	Objeto();
 	void dibuja();
+	float distancia(Vector2D punto);
 };
 

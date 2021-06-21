@@ -21,5 +21,6 @@ public:
 	//static void rebote(tanque& t, ListaCajas l);
 	//static void rebote(ListaCajas);
 	//static bool colision(Proyectil p, tanque t);
+	static bool colision(Objeto o, tanqueJugador j);
 };
 
