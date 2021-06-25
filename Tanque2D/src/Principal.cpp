@@ -2,13 +2,14 @@
 #include <iostream>
 #include "Mundo.h"
 #include "ColorRGB.h"
-
+#define FRECUENCIA_OBJETOS 10000 //en ms, no se si poner en otro sitio
 using namespace std;
 
 Mundo mundo;
 
 void OnDraw(void);
 void OnTimer(int value);
+void CreateObject(int value); //para crear
 void OnKeyboardDown(unsigned char key, int x, int y);	
 void onSpecialKeyboardDown(int key, int x, int y);
 void getMouse(int x, int y);
@@ -19,15 +20,10 @@ int main(int argc, char* argv[])
 {
 	
 	glutInit(&argc, argv);
-	glutInitWindowSize(ANCHO, ALTO);
+	glutInitWindowSize(int(ANCHO), int(ALTO));
 	glutCreateWindow("MiJuego");
-	//glMatrixMode(GL_PROJECTION);
-	//gluPerspective(45, (float)ANCHO / ALTO, 0.1, 150);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//glOrtho(0.0f, ANCHO, ALTO, 0.0f, 0.0f, 1.0f);
-	//glOrtho(-1.0f, 1.0F, -1.0F, 1.0f, 0.0f, 1.0f);
-	//glOrtho(-1, ANCHO/ESCALA-1, 1-ALTO/ESCALA, 1, 0.0f, 1.0f);
 	glOrtho(-ANCHO / (2*ESCALA), ANCHO / (2*ESCALA), - ALTO / (2*ESCALA), ALTO / (2*ESCALA), 0.0f, 1.0f);
 
 
@@ -39,6 +35,7 @@ int main(int argc, char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
+	glutTimerFunc(FRECUENCIA_OBJETOS, CreateObject, 0); //cada 10s llama a la funcion para crear un objeto
 	glutKeyboardFunc(OnKeyboardDown);
 	glutSpecialFunc(onSpecialKeyboardDown);
 	glutPassiveMotionFunc(getMouse);
@@ -66,6 +63,7 @@ void OnDraw(void)
 	//no borrar esta linea ni poner nada despues
 	glutSwapBuffers();
 }
+
 void OnKeyboardDown(unsigned char key, int x_t, int y_t)
 {
 	//poner aqui el código de teclado
@@ -81,6 +79,14 @@ void OnTimer(int value)
 
 	//no borrar estas lineas
 	glutTimerFunc(25, OnTimer, 0);
+	glutPostRedisplay();
+}
+
+void CreateObject(int value) { //llama a la función de mundo para crear objetos cada 10s
+	mundo.crearObjeto();
+
+	//no borrar estas lineas
+	glutTimerFunc(10000, CreateObject, 0);
 	glutPostRedisplay();
 }
 

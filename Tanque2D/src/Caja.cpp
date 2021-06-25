@@ -52,3 +52,9 @@ void Caja::Dibuja(){
 
 	glEnd();
 }
+
+Vector2D Caja::GetLim(int i) {
+	if (i == 1) return limite1;
+	if (i == 2) return limite2;
+
+}

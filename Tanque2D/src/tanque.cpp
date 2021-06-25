@@ -4,7 +4,7 @@
 
 void tanque::Inicializa() {
 	posicion = 0;
-	vel = 0.01;
+	vel = 0.01f;
 	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(255, 255, 255);
 }
@@ -63,7 +63,7 @@ void tanque::setApuntado(float x, float y) {
 void tanque::setApuntado(Vector2D v) {
 	apuntado.x = v.x - posicion.x;  //Generalizar para distintas dimensiones
 	apuntado.y = v.y - posicion.y;
-	apuntado = apuntado.unitario() * 0.2;//0.2 es el tamaño del cañon
+	apuntado = apuntado.unitario() * 0.2f;//0.2 es el tamaño del cañon
 }
 
 
@@ -75,3 +75,9 @@ void tanque::Dispara() {
 Vector2D tanque::getPos() {
 	return posicion;
 }
+
+void tanque::setDaño(int dmg)
+{
+	proyectiles.setDaño(dmg);
+}
+

@@ -19,11 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Botiquin.cpp" />
     <ClCompile Include="src\Caja.cpp" />
+    <ClCompile Include="src\Corazon.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaCajas.cpp" />
+    <ClCompile Include="src\ListaObjetos.cpp" />
     <ClCompile Include="src\ListaProyectiles.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
+    <ClCompile Include="src\Objeto.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Principal.cpp" />
     <ClCompile Include="src\Proyectil.cpp" />
@@ -33,12 +37,16 @@
     <ClCompile Include="src\Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Botiquin.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\ColorRGB.h" />
+    <ClInclude Include="src\Corazon.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaCajas.h" />
+    <ClInclude Include="src\ListaObjetos.h" />
     <ClInclude Include="src\ListaProyectiles.h" />
     <ClInclude Include="src\Mundo.h" />
+    <ClInclude Include="src\Objeto.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Proyectil.h" />
     <ClInclude Include="src\tanque.h" />

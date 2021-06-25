@@ -13,81 +13,120 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de origen\Objetos">
+      <UniqueIdentifier>{f3d666cb-d74d-41e0-a077-e5f8d058f4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Tanques">
+      <UniqueIdentifier>{17617dab-3eae-4c5d-869e-e5ba5a8b95a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Proyectiles">
+      <UniqueIdentifier>{ba4d8a86-784d-4dd4-abeb-bfa3c14433b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Cajas">
+      <UniqueIdentifier>{d29d25c2-b699-4624-aa36-933eb19eabc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de origen\Otro">
+      <UniqueIdentifier>{1a8f2de9-8d41-4783-a1d1-5b8c0053a29c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Vector2D.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tanqueJugador.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tanqueEnemigo.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\tanque.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Proyectil.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Principal.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Pared.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Mundo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="src\ListaProyectiles.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ListaCajas.cpp">
-      <Filter>Archivos de origen</Filter>
-    </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Botiquin.cpp">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Corazon.cpp">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaObjetos.cpp">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Objeto.cpp">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tanque.cpp">
+      <Filter>Archivos de origen\Tanques</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tanqueEnemigo.cpp">
+      <Filter>Archivos de origen\Tanques</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tanqueJugador.cpp">
+      <Filter>Archivos de origen\Tanques</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaProyectiles.cpp">
+      <Filter>Archivos de origen\Proyectiles</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Proyectil.cpp">
+      <Filter>Archivos de origen\Proyectiles</Filter>
+    </ClCompile>
     <ClCompile Include="src\Caja.cpp">
-      <Filter>Archivos de origen</Filter>
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaCajas.cpp">
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pared.cpp">
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vector2D.cpp">
+      <Filter>Archivos de origen\Otro</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Caja.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ColorRGB.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Interaccion.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaCajas.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ListaProyectiles.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Mundo.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Pared.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Proyectil.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClInclude>
-    <ClInclude Include="src\tanque.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\tanqueJugador.h">
+      <Filter>Archivos de origen\Tanques</Filter>
     </ClInclude>
     <ClInclude Include="src\tanqueEnemigo.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de origen\Tanques</Filter>
     </ClInclude>
-    <ClInclude Include="src\tanqueJugador.h">
-      <Filter>Archivos de encabezado</Filter>
+    <ClInclude Include="src\tanque.h">
+      <Filter>Archivos de origen\Tanques</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Proyectil.h">
+      <Filter>Archivos de origen\Proyectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaProyectiles.h">
+      <Filter>Archivos de origen\Proyectiles</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Botiquin.h">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Corazon.h">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pared.h">
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Caja.h">
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaCajas.h">
+      <Filter>Archivos de origen\Cajas</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ColorRGB.h">
+      <Filter>Archivos de origen\Otro</Filter>
     </ClInclude>
     <ClInclude Include="src\Vector2D.h">
-      <Filter>Archivos de encabezado</Filter>
+      <Filter>Archivos de origen\Otro</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaObjetos.h">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Objeto.h">
+      <Filter>Archivos de origen\Objetos</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Interaccion.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mundo.h">
+      <Filter>Archivos de origen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

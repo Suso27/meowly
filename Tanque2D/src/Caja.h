@@ -4,7 +4,7 @@
 class Caja{
 private:	
 
-	Vector2D limite1; //Esquina superior dizquierda
+	Vector2D limite1; //Esquina superior izquierda
 	Vector2D limite2; //Esquina inferior derecha
 
 	Pared pared_abj;
@@ -19,5 +19,6 @@ public:
 		virtual ~Caja();
 		void Dibuja();
 		friend class Interaccion;
+		Vector2D GetLim(int i);
 };
 

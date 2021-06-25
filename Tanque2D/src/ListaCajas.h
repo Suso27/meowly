@@ -14,7 +14,9 @@ public:
 	ListaCajas();
 	~ListaCajas() {}
 	void Inicializa();
+	void Inicializa(int n);
 	void Dibuja();
+	int getNumero();
 
 	Caja* operator[](int pos);
 
