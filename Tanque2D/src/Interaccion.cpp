@@ -4,18 +4,40 @@
 Interaccion::Interaccion() {};
 
 
-bool Interaccion::rebote(Proyectil& d,Pared& p)
+//bool Interaccion::rebote(Proyectil& d,Pared& p)
+//{
+//	Vector2D dir;
+//	float dif = p.distancia(d.posicion, &dir) - d.radio;
+//	if (dif <= 0.005f)//Lo suyo sería poner dif <= 0.0f pero se buguea
+//	{
+//		d.rebotes++;
+//
+//		Vector2D v_inicial = d.velocidad;
+//		d.velocidad = v_inicial - dir * 2.0 * (v_inicial * dir);
+//		d.posicion = d.posicion - dir * dif;
+//		return true;
+//	}
+//	return false;
+//
+//}
+
+bool Interaccion::rebote(Proyectil& d, Pared& p)
 {
 	Vector2D dir;
 	float dif = p.distancia(d.posicion, &dir) - d.radio;
-	if (dif <= 0.005f)//Lo suyo sería poner dif <= 0.0f pero se buguea
+	if (dif <= 0.0f)//Lo suyo sería poner dif <= 0.0f pero se buguea
 	{
+		d.rebotes++;
+
 		Vector2D v_inicial = d.velocidad;
 		d.velocidad = v_inicial - dir * 2.0 * (v_inicial * dir);
-		d.posicion = d.posicion - dir * dif;
+		d.posicionTmenos = d.posicionTmenos - dir * dif;
 		return true;
 	}
-	return false;
+	else {
+		d.posicionTmenos = d.posicion;
+		return false;
+	}
 
 }
 
@@ -46,10 +68,14 @@ bool Interaccion::rebote(Proyectil& p, Caja& c) {
 //	else return false;
 //}
 
-void Interaccion::rebote(ListaProyectiles l, Caja& c) {
+void Interaccion::rebote(ListaProyectiles& l, Caja& c) {
 	for (int i = 0; i < l.numero; i++)
 	{
-		rebote(*(l.lista[i]), c);
+		if (rebote(*(l.lista[i]), c)) {
+			if(l.lista[i]->rebotes>2) {
+				l.eliminar(i);
+			}
+		}
 	}
 }
 

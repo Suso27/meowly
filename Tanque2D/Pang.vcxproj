@@ -60,7 +60,7 @@
     <ProjectGuid>{e575fade-b6eb-4154-a1ed-8067a12eae98}</ProjectGuid>
     <RootNamespace>Pang</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>Taque2D</ProjectName>
+    <ProjectName>Taque2D4</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

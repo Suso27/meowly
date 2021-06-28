@@ -96,7 +96,6 @@ void onSpecialKeyboardDown(int key, int x, int y)
 }
 
 void getMouse(int x, int y) {
-	//cout << x << "  " << y << endl;
 	mundo.setRaton(x,y);
 }
 

@@ -8,7 +8,7 @@
 #include "ListaCajas.h"
 #include "ListaObjetos.h"
 #define ALTO 800.0F
-#define ANCHO 1600.0F
+#define ANCHO 1000.0F
 #define ESCALA 300.0F
 
 class Mundo

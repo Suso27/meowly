@@ -3,12 +3,12 @@
 #include <math.h>
 #define PI 3.1415
 
-Proyectil::Proyectil(){
-	daño = 0;
-	radio = 0;
+Proyectil::Proyectil():radio(0),rebotes(0){
+	
 }
 
 Proyectil::Proyectil(Vector2D vel, Vector2D pos) {
+	rebotes = 0;
 	posicion = pos;
 	velocidad = vel*3;
 	radio = 0.01f;
@@ -54,7 +54,7 @@ void Proyectil::setPos(Vector2D tpos) {
 //}
 
 void Proyectil::setDaño(int dmg) {
-	daño = dmg;
+	//daño = dmg;
 }
 
 Vector2D Proyectil::getPos(){
