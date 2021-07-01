@@ -63,3 +63,8 @@ Objeto* ListaObjetos::colision(tanqueJugador& j)
 	}
 	return 0; //no hay colisión
 }
+
+int ListaObjetos::getNum()
+{
+	return numero;
+}

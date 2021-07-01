@@ -118,10 +118,12 @@ void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 {
 	//for (int i = 0; i < 6; i++) //para probar la generacion de objetos
 	//{
+	if (objetos.getNum() < 10) { //numero maximo de objetos en pantalla, se puede poner una var
 		Objeto* aux = new Objeto;
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
-	//}
+	}
+ //}
 }
 
 
