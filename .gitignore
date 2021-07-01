@@ -10,3 +10,6 @@
 *.opendb
 Debug/
 .vs/
+tmp/
+.tmp/
+.Debug/
