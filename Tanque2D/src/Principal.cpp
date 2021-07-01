@@ -20,15 +20,10 @@ int main(int argc, char* argv[])
 {
 	
 	glutInit(&argc, argv);
-	glutInitWindowSize(ANCHO, ALTO);
+	glutInitWindowSize(int(ANCHO), int(ALTO));
 	glutCreateWindow("MiJuego");
-	//glMatrixMode(GL_PROJECTION);
-	//gluPerspective(45, (float)ANCHO / ALTO, 0.1, 150);
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	//glOrtho(0.0f, ANCHO, ALTO, 0.0f, 0.0f, 1.0f);
-	//glOrtho(-1.0f, 1.0F, -1.0F, 1.0f, 0.0f, 1.0f);
-	//glOrtho(-1, ANCHO/ESCALA-1, 1-ALTO/ESCALA, 1, 0.0f, 1.0f);
 	glOrtho(-ANCHO / (2*ESCALA), ANCHO / (2*ESCALA), - ALTO / (2*ESCALA), ALTO / (2*ESCALA), 0.0f, 1.0f);
 
 
@@ -101,7 +96,6 @@ void onSpecialKeyboardDown(int key, int x, int y)
 }
 
 void getMouse(int x, int y) {
-	//cout << x << "  " << y << endl;
 	mundo.setRaton(x,y);
 }
 

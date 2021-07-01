@@ -6,14 +6,18 @@ class Proyectil
 	friend class Interaccion;
 private:
 	float radio;
-	Vector2D posicion;
-	Vector2D velocidad;
-	//bool disparado = false;//para saber si se ha disparado o no
-	//inecesario si se crea en en momento que se dispara
+	int rebotes;//contador de los rebotes
+
 	int daño;
+	int nMaxRebotes = 0;
+
+	Vector2D posicion;
+	Vector2D posicionTmenos;
+	Vector2D velocidad;
 public:
 	Proyectil();
 	Proyectil(Vector2D,Vector2D);
+	Proyectil(Vector2D, Vector2D, int d, int n,float velModulo);
 	virtual ~Proyectil();
 	void dibuja();
 	void mueve(float);
