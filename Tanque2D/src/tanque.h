@@ -8,9 +8,16 @@
 class tanque {
 protected:
 
-	float municion;
+	//float municion;
 	float vel;
 	int vida;
+	float cadencia;//periodo con el que dispara
+	float tRecarga=0;//tiempo que ha pasado desde el último disparo
+
+	float daño;
+	int nMaxRebotes = 2;
+	float vProyectil = 3;
+
 
 	ColorRGB color;
 
@@ -22,8 +29,8 @@ public:
 	ListaProyectiles proyectiles;
 
 	friend class Interaccion;
-	tanque();
-	void Inicializa();
+	//tanque();
+	virtual void Inicializa(float x,float y)=0;
 	void Dibuja();
 	void Mueve(float t);
 	void Dispara();

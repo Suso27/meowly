@@ -11,7 +11,8 @@ Mundo::~Mundo() {
 void Mundo::dibuja()
 {        
 	tankJ.Dibuja();
-	tankE.Dibuja();
+	tankEA.Dibuja();
+	tankEB.Dibuja();
 	//caja.Dibuja();
 	contenedor.Dibuja();
 	cajas.Dibuja();
@@ -22,16 +23,19 @@ void Mundo::mueve()
 {
 	tankJ.Mueve(0.025f);
 	tankJ.setApuntado(raton.x, raton.y);
-	tankE.Mueve(0.025f, tankJ.getPos());
+	tankEA.Mueve(0.025f, tankJ.getPos());
+	tankEB.Mueve(0.025f, tankJ.getPos());
     //Interaccion::rebote(tankJ, caja);
 	for (int i = 0; i < contenedor.getNumero(); i++) {
 		Interaccion::rebote(tankJ, *contenedor[i]);
-		Interaccion::rebote(tankE, *contenedor[i]);
+		Interaccion::rebote(tankEA, *contenedor[i]);
+		Interaccion::rebote(tankEB, *contenedor[i]);
 	}
 
 	for (int i = 0; i < cajas.getNumero(); i++) {
 		Interaccion::rebote(tankJ, *cajas[i]);
-		Interaccion::rebote(tankE, *cajas[i]);
+		Interaccion::rebote(tankEA, *cajas[i]);
+		Interaccion::rebote(tankEB, *cajas[i]);
 	}
 
 	Objeto* aux = objetos.colision(tankJ);
@@ -41,8 +45,9 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	tankJ.Inicializa();
-	tankE.Inicializa();
+	tankJ.Inicializa(-0.75,0.0);
+	tankEA.Inicializa(1.7,-1.0);
+	tankEB.Inicializa(1.7, 0.0);
 	//caja.Inicializa(-0.04f, 0.2f, 0.04f,-0.2f);
 	contenedor.Inicializa(4);
 	cajas.Inicializa(2);
@@ -59,16 +64,6 @@ void Mundo::tecla(unsigned char key)
 		tankJ.Dispara();
 		break;
 	}
-	switch (key) //solo para probar el daño
-	{
-	case '-':
-		tankJ.setDaño(1);
-		break;
-	case '+':
-		tankJ.setDaño(10);
-		break;
-	}
-
 }
 
 void Mundo::teclaEspecial(unsigned char key)

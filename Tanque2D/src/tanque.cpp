@@ -2,18 +2,18 @@
 #include"freeglut.h"
 
 
-void tanque::Inicializa() {
-	posicion = 0;
-	vel = 0.01f;
-	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
-	color.set(255, 255, 255);
-}
+//void tanque::Inicializa() {
+//	posicion = 0;
+//	vel = 0.01f;
+//	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
+//	color.set(255, 255, 255);
+//}
+//
+//
 
-
-
-tanque::tanque() {
-	Inicializa();
-}
+//tanque::tanque() {
+//	Inicializa();
+//}
 
 void tanque::Dibuja() {
 
@@ -39,13 +39,6 @@ void tanque::Dibuja() {
 
 }
 void tanque::Mueve(float t) {
-
-
-	/*posicion = posicion + velocidad * t + aceleracion * (0.5f * t * t);
-	velocidad = velocidad + aceleracion * t;*/
-	//NO es la forma adecuada de resolverlo
-	if (posicion.x > 1.0f)posicion.x = 1.0f;
-	if (posicion.x < -1.0f)posicion.x = -1.0f;
 	proyectiles.mueve(t);
 }
 void tanque::setVel(float vx, float vy) {
@@ -55,20 +48,21 @@ void tanque::setVel(float vx, float vy) {
 
 void tanque::setApuntado(float x, float y) {
 
-	apuntado.x = x - posicion.x;  //Generalizar para distintas dimensiones
+	apuntado.x = x - posicion.x; 
 	apuntado.y = y - posicion.y;
-	apuntado = apuntado.unitario() * 0.2;//0.2 es el tamaño del cañon
+	apuntado = apuntado.unitario() * 0.2f;//0.2 es el tamaño del cañon
 }
 
 void tanque::setApuntado(Vector2D v) {
-	apuntado.x = v.x - posicion.x;  //Generalizar para distintas dimensiones
+	apuntado.x = v.x - posicion.x;
 	apuntado.y = v.y - posicion.y;
 	apuntado = apuntado.unitario() * 0.2f;//0.2 es el tamaño del cañon
 }
 
 
 void tanque::Dispara() {
-	Proyectil* d = new Proyectil(apuntado,posicion);
+
+	Proyectil* d = new Proyectil(apuntado,posicion,daño,nMaxRebotes,vProyectil);
 	proyectiles.agregar(d);
 }
 
@@ -78,6 +72,6 @@ Vector2D tanque::getPos() {
 
 void tanque::setDaño(int dmg)
 {
-	proyectiles.setDaño(dmg);
+	daño = dmg;
 }
 

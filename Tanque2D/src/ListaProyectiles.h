@@ -10,7 +10,6 @@ class ListaProyectiles
 	Proyectil* lista[MAX_PROYECTILES];
 	int numero;
 	int municion;
-	int daño;
 
 public:
 	ListaProyectiles();
@@ -22,8 +21,7 @@ public:
 	void mueve(float t);
 	void dibuja();
 	void eliminar(int index);
-	void eliminar(Proyectil* p);
-	void setDaño(int dmg);
+	void eliminar(Proyectil* p);	
 	int getNum();
 	Proyectil* getElem(int n);
 };

@@ -72,7 +72,7 @@ void Interaccion::rebote(ListaProyectiles& l, Caja& c) {
 	for (int i = 0; i < l.numero; i++)
 	{
 		if (rebote(*(l.lista[i]), c)) {
-			if(l.lista[i]->rebotes>2) {
+			if(l.lista[i]->rebotes> l.lista[i]->nMaxRebotes) {
 				l.eliminar(i);
 			}
 		}

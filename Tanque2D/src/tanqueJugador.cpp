@@ -3,13 +3,15 @@
 
 tanqueJugador::tanqueJugador(){}
 
-void tanqueJugador::Inicializa() {
-	posicion.x = -0.75;
-	posicion.y = 0.0;
+void tanqueJugador::Inicializa(float x,float y) {
+	posicion.x = x;
+	posicion.y = y;
 	vel = 0.01f;
 	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(132, 134, 59);//233,208,154
 	vida = 3;
+	nMaxRebotes = 3;
+	vProyectil = 5;
 }
 
 

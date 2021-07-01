@@ -3,12 +3,14 @@
 #include "Vector2D.h"
 #include "tanqueJugador.h"
 #include "tanqueEnemigo.h"
+#include "tanqueEnemigoA.h"
+#include "tanqueEnemigoB.h"
 #include "Pared.h"
 #include "Caja.h"
 #include "ListaCajas.h"
 #include "ListaObjetos.h"
-#define ALTO 800.0F
-#define ANCHO 1000.0F
+#define ALTO 750.0F
+#define ANCHO 1300.0F
 #define ESCALA 300.0F
 
 class Mundo
@@ -16,7 +18,8 @@ class Mundo
 private:
 	Vector2D raton;
 	tanqueJugador tankJ;
-	tanqueEnemigo tankE;
+	tanqueEnemigoA tankEA;
+	tanqueEnemigoB tankEB;
 	Caja caja;
 	ListaCajas contenedor;
 	ListaCajas cajas;

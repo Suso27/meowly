@@ -25,11 +25,18 @@ void ListaCajas::Inicializa(int n) {
 		lista[1] = new Caja(0.2f, 0.6f, 0.28f, 0.2f);
 		numero = 2;
 		break;
+	//case 4:
+	//	lista[0] = new Caja(-1.0f, 1.0f, -0.95f, -1.0);
+	//	lista[1] = new Caja(-1.0f, 1.0f, 1.0f, 0.95f);
+	//	lista[2] = new Caja(0.95f, 1.0f, 1.0f, -1.0f);
+	//	lista[3] = new Caja(-1.0f, -0.95f, 1.0f, -1.0);
+	//	numero = 4;
+	//	break;
 	case 4:
-		lista[0] = new Caja(-1.0f, 1.0f, -0.95f, -1.0);
-		lista[1] = new Caja(-1.0f, 1.0f, 1.0f, 0.95f);
-		lista[2] = new Caja(0.95f, 1.0f, 1.0f, -1.0f);
-		lista[3] = new Caja(-1.0f, -0.95f, 1.0f, -1.0);
+		lista[0] = new Caja(-1.8f, 1.2f, -1.75f, -1.2f);//Ponerlo en función de los límites del mapa
+		lista[1] = new Caja(-1.8f, 1.2f, 1.8f, 1.15f);
+		lista[2] = new Caja(1.75f, 1.2f, 1.8f, -1.2f);
+		lista[3] = new Caja(-1.75f, -1.15f, 1.75f, -1.2f);
 		numero = 4;
 		break;
 	}

@@ -5,7 +5,7 @@
 class tanqueEnemigo : public tanque{
 public:
 	tanqueEnemigo();
-	void Inicializa();
+	void Inicializa(float x,float y)=0;
 	void Mueve(float t, Vector2D posJ);
 	void obstaculos();
 };

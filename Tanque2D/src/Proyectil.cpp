@@ -7,12 +7,22 @@ Proyectil::Proyectil():radio(0),rebotes(0){
 	
 }
 
-Proyectil::Proyectil(Vector2D vel, Vector2D pos) {
+
+Proyectil::Proyectil(Vector2D vel, Vector2D pos,int d,int n,float velModulo) {
 	rebotes = 0;
+	nMaxRebotes = n;
+	daño = d;
 	posicion = pos;
-	velocidad = vel*3;
+	velocidad = vel * velModulo;
 	radio = 0.01f;
 };
+
+//Proyectil::Proyectil(Vector2D vel, Vector2D pos) {
+//	rebotes = 0;
+//	posicion = pos;
+//	velocidad = vel*3;
+//	radio = 0.01f;
+//};
 Proyectil::~Proyectil() {};
 
 void Proyectil::dibuja()
