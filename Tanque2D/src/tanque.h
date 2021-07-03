@@ -24,13 +24,14 @@ protected:
 	Vector2D apuntado;
 	Vector2D posicion;
 	Vector2D velocidad;
-
-public:
 	ListaProyectiles proyectiles;
 
+public:
+
 	friend class Interaccion;
-	//tanque();
-	virtual void Inicializa(float x,float y)=0;
+	tanque();
+	tanque(float x, float y);
+	void Inicializa(float x,float y);
 	void Dibuja();
 	void Mueve(float t);
 	void Dispara();
@@ -39,5 +40,6 @@ public:
 	void setApuntado(Vector2D);
 	Vector2D getPos();
 	void setDaño(int dmg);
+	void setPos(float x, float y);
 };
 

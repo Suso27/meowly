@@ -3,6 +3,9 @@
 
 tanqueEnemigo::tanqueEnemigo(){}
 
+tanqueEnemigo::tanqueEnemigo(float x, float y):tanque(x,y) {}
+
+tanqueEnemigo::~tanqueEnemigo() {}
 
 void tanqueEnemigo::Mueve(float t,Vector2D posJ) {
 	if (tRecarga > cadencia) {

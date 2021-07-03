@@ -12,11 +12,13 @@ class ListaCajas
 public:
 	friend class Interaccion;
 	ListaCajas();
-	~ListaCajas() {}
+	~ListaCajas();
 	void Inicializa();
 	void Inicializa(int n);
 	void Dibuja();
 	int getNumero();
+	void destruirContenido();
+	
 
 	Caja* operator[](int pos);
 

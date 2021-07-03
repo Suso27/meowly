@@ -1,5 +1,4 @@
 #include "Proyectil.h"
-#include "freeglut.h"
 #include <math.h>
 #define PI 3.1415
 
