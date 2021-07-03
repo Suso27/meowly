@@ -11,6 +11,7 @@ protected:
 	//float municion;
 	float vel;
 	int vida;
+	int vidaMax;
 	float cadencia;//periodo con el que dispara
 	float tRecarga=0;//tiempo que ha pasado desde el último disparo
 
@@ -39,5 +40,11 @@ public:
 	void setApuntado(Vector2D);
 	Vector2D getPos();
 	void setDaño(int dmg);
+	void setVidaMax(int vida);
+	int getVidaMax();
+	void aumentarVidaMax();
+	void aumentarVida();
+	void aumentarDaño();
+	int getVidaActual();
 };
 

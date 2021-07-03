@@ -2,6 +2,10 @@
 #include "freeglut.h"
 #include "Interaccion.h"
 #include <math.h>
+#include "Botiquin.h"
+#include "Corazon.h"
+#include "Filete.h"
+#include <random>
 
 Mundo::Mundo(){}
 Mundo::~Mundo() {
@@ -39,8 +43,13 @@ void Mundo::mueve()
 	}
 
 	Objeto* aux = objetos.colision(tankJ);
-	if (aux != 0)//si alguna esfera ha chocado
+	if (aux != 0)//si hay colision entre el objeto y el tanque
+	{
+		aux->aplicarEfecto(tankJ);
 		objetos.eliminar(aux);
+		
+	}
+	
 }
 
 void Mundo::inicializa()
@@ -97,15 +106,41 @@ void Mundo::setRaton(int x, int y) {
 
 }
 
+float get_random_obj(double i, double j)
+{
+	/*static std::default_random_engine e;
+	static std::uniform_real_distribution<> dis(i, j); // rage 0 - 1
+	return dis(e);*/
+	std::random_device rd;
+	std::mt19937 mt(rd());
+	std::uniform_real_distribution<double> dist(i, j);
+	return dist(rd);
+}
+
 void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 {
-	//for (int i = 0; i < 6; i++) //para probar la generacion de objetos
-	//{
-		Objeto* aux = new Objeto;
+	int i = 0;
+	int j = 3;
+	float x = get_random_obj(i, j);
+	
+	if (x<1.0)
+		{Corazon* aux = new Corazon;
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
-	//}
-}
+		}
+	else if (x<2.0)
+		{Filete* aux = new Filete;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+		}
+	else
+		{Botiquin* aux = new Botiquin;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+		}
+	}
+	
+
 
 
 

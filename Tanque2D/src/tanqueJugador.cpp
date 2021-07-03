@@ -12,6 +12,7 @@ void tanqueJugador::Inicializa(float x,float y) {
 	vida = 3;
 	nMaxRebotes = 3;
 	vProyectil = 5;
+	daño = 1;
 }
 
 

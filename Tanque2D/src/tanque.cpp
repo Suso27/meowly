@@ -75,3 +75,34 @@ void tanque::setDaño(int dmg)
 	daño = dmg;
 }
 
+void tanque::setVidaMax(int vida)
+{
+	vidaMax = vida;
+}
+
+int tanque::getVidaMax()
+{
+	return vidaMax;
+}
+
+void tanque::aumentarVidaMax()
+{
+	++vidaMax;
+}
+
+void tanque::aumentarVida()
+{
+	if (vida<vidaMax)
+		++vida;
+}
+
+void tanque::aumentarDaño()
+{
+	++daño;
+}
+
+int tanque::getVidaActual()
+{
+	return vida;
+}
+
