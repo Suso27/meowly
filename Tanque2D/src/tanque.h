@@ -4,35 +4,47 @@
 #include "ListaProyectiles.h"
 #include "ColorRGB.h"
 
+
 class tanque {
 protected:
 
-	float municion;
+	//float municion;
 	float vel;
 	int vida;
+	int vidaMax;
+	float cadencia;//periodo con el que dispara
+	float tRecarga=0;//tiempo que ha pasado desde el último disparo
+
+	float daño;
+	int nMaxRebotes = 2;
+	float vProyectil = 3;
+
 
 	ColorRGB color;
 
-	ListaProyectiles proyectiles;
 	Vector2D apuntado;
 	Vector2D posicion;
 	Vector2D velocidad;
 
 public:
+	ListaProyectiles proyectiles;
+
 	friend class Interaccion;
-	tanque();
-	void Inicializa();
+	//tanque();
+	virtual void Inicializa(float x,float y)=0;
 	void Dibuja();
 	void Mueve(float t);
-	//void Interacciona(Caja& c);
-	//void Interacciona(ListaCajas c);
 	void Dispara();
 	void setVel(float vx, float vy);
 	void setApuntado(float x, float y);
 	void setApuntado(Vector2D);
 	Vector2D getPos();
 	void setDaño(int dmg);
-
-	//Proyectil* colision(tanque& t); //probar a poner en lista tanques
+	void setVidaMax(int vida);
+	int getVidaMax();
+	void aumentarVidaMax();
+	void aumentarVida();
+	void aumentarDaño();
+	int getVidaActual();
 };
 

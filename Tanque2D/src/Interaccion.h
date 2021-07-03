@@ -16,7 +16,7 @@ public:
 	static bool colision(tanque&, Caja&);
 	static bool rebote(Proyectil&, Caja&);
 	static bool rebote(Proyectil& d,Pared& p);
-	static void rebote(ListaProyectiles, Caja&);
+	static void rebote(ListaProyectiles&, Caja&);
 	static void rebote(tanque& t, Caja& c);
 	//static void rebote(tanque& t, ListaCajas l);
 	//static void rebote(ListaCajas);

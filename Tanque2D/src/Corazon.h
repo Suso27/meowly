@@ -3,5 +3,6 @@
 class Corazon :
     public Objeto
 {
+    void aplicarEfecto(tanqueJugador& j);
 };
 

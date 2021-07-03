@@ -9,7 +9,7 @@ protected:
 
 public:
 	tanqueJugador();
-	void Inicializa();
+	void Inicializa(float x,float y);
 	void mueveTecla(unsigned char key);
 };
 

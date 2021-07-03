@@ -13,7 +13,6 @@ public:
 	void eliminar(int index);
 	void eliminar(Objeto* o);
 	Objeto* colision(tanqueJugador& t);
-	int getNum();
 private:
 	Objeto* lista[MAX_OBJETOS];
 	int numero;

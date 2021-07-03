@@ -2,39 +2,49 @@
 #include "Interaccion.h"
 ListaProyectiles::ListaProyectiles()
 {
-	daño = 1;
+
 	numero = 0;
 	municion = 10;
 	for (int i = 0; i < MAX_PROYECTILES; i++)
 		lista[i] = 0;
 }
 
-ListaProyectiles::~ListaProyectiles(){}
+ListaProyectiles::~ListaProyectiles(){
+	//for (int i = 0; i < numero; i++)
+	//{
+	//	delete lista[i];
+	//}
+	//numero = 0;
+}
 
 bool ListaProyectiles::agregar(Proyectil* d)
 {
-	if (municion>0)
-	{
-		lista[numero++] = d;
-		lista[numero-1]->setDaño(daño);
-		municion -= 1;
-		return true;
-	}
-	else
-		return false;
+	//if (municion>0)
+	//{
+	//	lista[numero++] = d;
+	//	lista[numero-1]->setDaño(daño);
+	//	municion -= 1;
+	//	return true;
+	//}
+	//else
+	//	return false;
 
-	for (int i = 0; i < numero; i++)
-	{
-		for (int j = 0; j < numero; j++)
-		{
-			if (i != j) {
-				if ((lista[i]) == (lista[j]))
-				{
-					return false;
-				}
-			}
-		}
-	}
+	lista[numero++] = d;
+	return true;
+
+	//for (int i = 0; i < numero; i++)
+	//{
+	//	for (int j = 0; j < numero; j++)
+	//	{
+	//		if (i != j) {
+	//			if ((lista[i]) == (lista[j]))
+	//			{
+	//				return false;
+	//			}
+	//		}
+	//	}
+	//}
+
 }
 
 void ListaProyectiles::destruirContenido()
@@ -58,9 +68,7 @@ void ListaProyectiles::dibuja()
 		lista[i]->dibuja();
 }
 
-/*void ListaProyectiles::colision()
-{
-}*/
+
 
 void ListaProyectiles::setPos(Vector2D pos)
 {
@@ -92,10 +100,6 @@ void ListaProyectiles::eliminar(Proyectil* p)
 		}
 }
 
-void ListaProyectiles::setDaño(int dmg)
-{
-	daño = dmg;
-}
 
 //Proyectil* ListaProyectiles::colision(tanque &t)
 
