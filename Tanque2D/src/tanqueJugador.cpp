@@ -10,6 +10,7 @@ void tanqueJugador::Inicializa(float x,float y) {
 	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(132, 134, 59);//233,208,154
 	vida = 3;
+	vidaMax = 3;
 	nMaxRebotes = 3;
 	vProyectil = 5;
 	daño = 1;

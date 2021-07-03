@@ -86,8 +86,21 @@ void Interaccion::rebote(tanque& t, Caja& c) {
 bool Interaccion::colision(Objeto o, tanqueJugador j)
 {
 	float dist = o.distancia(j.getPos());
-	if (dist < 0.07f) return true;
+	if (dist < 0.07f) 
+		return true;
 	return false;
+}
+
+void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
+{
+	for (int i = 0; i < lo.numero; i++)
+	{
+		if (colision(*(lo.lista[i]), j)) {
+			lo[i]->aplicarEfecto(j);
+				lo.eliminar(i);
+			
+		}
+	}
 }
 
 //void Interaccion::rebote(tanque& t, ListaCajas l) {

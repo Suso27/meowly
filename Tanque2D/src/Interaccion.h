@@ -7,7 +7,7 @@
 #include "tanqueJugador.h"
 #include "tanqueEnemigo.h"
 #include "ListaCajas.h"
-#include "Objeto.h"
+#include "ListaObjetos.h"
 
 class Interaccion {
 public:
@@ -22,5 +22,6 @@ public:
 	//static void rebote(ListaCajas);
 	//static bool colision(Proyectil p, tanque t);
 	static bool colision(Objeto o, tanqueJugador j);
+	static void colision(ListaObjetos& lo, tanqueJugador& j); 
 };
 

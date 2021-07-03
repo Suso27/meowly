@@ -42,13 +42,18 @@ void Mundo::mueve()
 		Interaccion::rebote(tankEB, *cajas[i]);
 	}
 
+	for (int i = 0; i < objetos.getNumero(); i++) {
+		Interaccion::colision(objetos, tankJ);
+	}
+
+	/*
 	Objeto* aux = objetos.colision(tankJ);
 	if (aux != 0)//si hay colision entre el objeto y el tanque
 	{
 		aux->aplicarEfecto(tankJ);
 		objetos.eliminar(aux);
 		
-	}
+	}*/
 	
 }
 
