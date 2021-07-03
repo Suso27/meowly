@@ -21,6 +21,9 @@
     <ClCompile Include="src\Caja.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Coordinador.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="src\Corazon.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -34,6 +37,9 @@
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaProyectiles.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaTanques.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\Mundo.cpp">
@@ -80,6 +86,9 @@
     <ClInclude Include="src\ColorRGB.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="src\Coordinador.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
     <ClInclude Include="src\Corazon.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
@@ -93,6 +102,9 @@
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaProyectiles.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaTanques.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="src\Mundo.h">

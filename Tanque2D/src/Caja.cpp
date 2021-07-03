@@ -2,6 +2,7 @@
 
 Caja::Caja(){};
 
+
 Caja::Caja(float l1x, float l1y, float l2x, float l2y) {
 
 	limite1.x = l1x;
@@ -14,7 +15,6 @@ Caja::Caja(float l1x, float l1y, float l2x, float l2y) {
 	pared_dcha.setPos(l1x, l1y, l1x, l2y);
 	pared_izq.setPos(l2x, l1y, l2x, l2y);
 };
-Caja::~Caja() {};
 
 void Caja::Inicializa(float l1x, float l1y, float l2x, float l2y) {
 

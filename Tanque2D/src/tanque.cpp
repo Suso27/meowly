@@ -1,5 +1,4 @@
 #include "tanque.h"
-#include"freeglut.h"
 
 
 //void tanque::Inicializa() {
@@ -11,9 +10,12 @@
 //
 //
 
-//tanque::tanque() {
-//	Inicializa();
-//}
+tanque::tanque() {}
+
+tanque::tanque(float x, float y) {
+	posicion.x = x;
+	posicion.y = y;
+}
 
 void tanque::Dibuja() {
 
@@ -75,3 +77,7 @@ void tanque::setDaño(int dmg)
 	daño = dmg;
 }
 
+void tanque::setPos(float x, float y) {
+	posicion.x = x;
+	posicion.y = y;
+}

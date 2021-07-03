@@ -4,6 +4,9 @@ class tanqueEnemigoB :
     public tanqueEnemigo
 {
 public:
-    void Inicializa(float x, float y);
+    tanqueEnemigoB();
+    ~tanqueEnemigoB();
+    tanqueEnemigoB(float x, float y);
+    void Inicializa();
 };
 
