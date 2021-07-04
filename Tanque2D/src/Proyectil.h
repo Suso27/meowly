@@ -1,5 +1,6 @@
 #pragma once
 #include "Vector2D.h"
+#include "ColorRGB.h"
 
 class Proyectil
 {
@@ -16,6 +17,7 @@ private:
 	Vector2D velocidad;
 public:
 	Proyectil();
+	Proyectil(Proyectil* p);
 	Proyectil(Vector2D,Vector2D);
 	Proyectil(Vector2D, Vector2D, int d, int n,float velModulo);
 	virtual ~Proyectil();

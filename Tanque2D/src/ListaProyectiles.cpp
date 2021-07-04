@@ -1,5 +1,5 @@
 #include "ListaProyectiles.h"
-#include "Interaccion.h"
+
 ListaProyectiles::ListaProyectiles()
 {
 
@@ -8,11 +8,18 @@ ListaProyectiles::ListaProyectiles()
 		lista[i] = 0;
 }
 
+ListaProyectiles::ListaProyectiles(ListaProyectiles& l) {
+	numero = l.numero;
+	for (int i = 0; i < numero; i++) {
+		lista[i] = new Proyectil(l[i]);
+	}
+}
+
 ListaProyectiles::~ListaProyectiles(){
-	for (int i = 0; i < numero; i++)
+	/*for (int i = 0; i < numero; i++)
 	{
 		delete lista[i];
-	}
+	}*/
 }
 
 bool ListaProyectiles::agregar(Proyectil* d)
@@ -77,6 +84,8 @@ int ListaProyectiles::getNum() {
 	return numero;
 }
 
-Proyectil* ListaProyectiles::getElem(int n) {
-	return lista[n];
+Proyectil ListaProyectiles::operator[](int n) {
+	return *lista[n];
 }
+
+

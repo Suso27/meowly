@@ -3,5 +3,9 @@
 class Botiquin :
     public Objeto
 {
+public:
+    Botiquin();
+    void aplicarEfecto(tanqueJugador& j);
+
 };
 

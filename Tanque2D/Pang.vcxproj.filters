@@ -18,6 +18,9 @@
     <ClCompile Include="src\Botiquin.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\BulletSpeedUp.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="src\Caja.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
@@ -27,10 +30,16 @@
     <ClCompile Include="src\Corazon.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\DmgUp.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
     <ClCompile Include="src\Interaccion.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaCajas.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ListaCajas1.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
     <ClCompile Include="src\ListaObjetos.cpp">
@@ -80,6 +89,9 @@
     <ClInclude Include="src\Botiquin.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="src\BulletSpeedUp.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
     <ClInclude Include="src\Caja.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
@@ -92,10 +104,16 @@
     <ClInclude Include="src\Corazon.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
+    <ClInclude Include="src\DmgUp.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
     <ClInclude Include="src\Interaccion.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaCajas.h">
+      <Filter>Archivos de origen</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ListaCajas1.h">
       <Filter>Archivos de origen</Filter>
     </ClInclude>
     <ClInclude Include="src\ListaObjetos.h">

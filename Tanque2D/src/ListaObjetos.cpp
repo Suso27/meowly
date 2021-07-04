@@ -54,7 +54,17 @@ void ListaObjetos::eliminar(Objeto* o)
 		}
 }
 
-Objeto* ListaObjetos::colision(tanqueJugador& j)
+int ListaObjetos::getNumero()
+{
+	return numero;
+}
+
+Objeto* ListaObjetos::operator[](int pos)
+{
+	return lista[pos];
+}
+
+/*Objeto* ListaObjetos::colision(tanqueJugador& j)
 {
 	for (int i = 0; i < numero; i++)
 	{
@@ -62,4 +72,4 @@ Objeto* ListaObjetos::colision(tanqueJugador& j)
 			return lista[i];
 	}
 	return 0; //no hay colisión
-}
+}*/

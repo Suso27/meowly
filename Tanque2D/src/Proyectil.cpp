@@ -1,9 +1,17 @@
 #include "Proyectil.h"
-#include <math.h>
 #define PI 3.1415
 
 Proyectil::Proyectil():radio(0),rebotes(0){
 	
+}
+
+Proyectil::Proyectil(Proyectil* p) {
+	rebotes = p->rebotes;
+	nMaxRebotes = p->nMaxRebotes;
+	daño = p->daño;
+	posicion = p->posicion;
+	velocidad = p->velocidad;
+	radio = p->radio;
 }
 
 

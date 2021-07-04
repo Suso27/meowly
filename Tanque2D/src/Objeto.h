@@ -2,6 +2,7 @@
 #include "Vector2D.h"
 #include <ctime>
 #include "ColorRGB.h"
+#include "tanqueJugador.h"
 class Objeto
 {
 	friend class Interaccion;
@@ -15,5 +16,7 @@ public:
 	Objeto();
 	void dibuja();
 	float distancia(Vector2D punto);
+	virtual void aplicarEfecto(tanqueJugador& j) { };
+	float get_random(double i, double j);
 };
 

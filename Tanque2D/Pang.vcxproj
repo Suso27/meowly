@@ -20,11 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Botiquin.cpp" />
+    <ClCompile Include="src\BulletSpeedUp.cpp" />
     <ClCompile Include="src\Caja.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Corazon.cpp" />
+    <ClCompile Include="src\DmgUp.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaCajas.cpp" />
+    <ClCompile Include="src\ListaCajas1.cpp" />
     <ClCompile Include="src\ListaObjetos.cpp" />
     <ClCompile Include="src\ListaProyectiles.cpp" />
     <ClCompile Include="src\ListaTanques.cpp" />
@@ -42,12 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Botiquin.h" />
+    <ClInclude Include="src\BulletSpeedUp.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\ColorRGB.h" />
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Corazon.h" />
+    <ClInclude Include="src\DmgUp.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaCajas.h" />
+    <ClInclude Include="src\ListaCajas1.h" />
     <ClInclude Include="src\ListaObjetos.h" />
     <ClInclude Include="src\ListaProyectiles.h" />
     <ClInclude Include="src\ListaTanques.h" />

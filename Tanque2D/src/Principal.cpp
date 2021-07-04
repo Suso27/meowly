@@ -1,4 +1,3 @@
-#include "Mundo.h"
 #include "Coordinador.h"
 #define FRECUENCIA_OBJETOS 10000 //en ms, no se si poner en otro sitio
 //using namespace std;

@@ -1,5 +1,5 @@
 #pragma once
-#include "freeglut.h"
+#include <math.h>
 
 class Vector2D
 {

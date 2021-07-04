@@ -7,6 +7,8 @@ private:
 	tanqueEnemigo* lista[MAX_TANQUES];
 	int numero;
 public:
+	friend class Interaccion;
+
 	ListaTanques();
 	virtual ~ListaTanques();
 	bool agregar(tanqueEnemigo* t);

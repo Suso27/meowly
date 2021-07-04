@@ -1,16 +1,7 @@
 #include "tanque.h"
 
-
-//void tanque::Inicializa() {
-//	posicion = 0;
-//	vel = 0.01f;
-//	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
-//	color.set(255, 255, 255);
-//}
-//
-//
-
-tanque::tanque() {}
+tanque::tanque() {
+}
 
 tanque::tanque(float x, float y) {
 	posicion.x = x;
@@ -72,12 +63,48 @@ Vector2D tanque::getPos() {
 	return posicion;
 }
 
+void tanque::setPos(float x, float y) {
+	posicion.x = x;
+	posicion.y = y;
+}
+
 void tanque::setDaño(int dmg)
 {
 	daño = dmg;
 }
 
-void tanque::setPos(float x, float y) {
-	posicion.x = x;
-	posicion.y = y;
+void tanque::setVidaMax(int vida)
+{
+	vidaMax = vida;
 }
+
+int tanque::getVidaMax()
+{
+	return vidaMax;
+}
+
+void tanque::aumentarVidaMax()
+{
+	++vidaMax;
+}
+
+void tanque::aumentarVida()
+{
+	if (vida<vidaMax)
+		++vida;
+}
+
+void tanque::aumentarDaño()
+{
+	++daño;
+}
+
+void tanque::aumentarVproyectil(int v) {
+	vProyectil += v;
+}
+
+int tanque::getVidaActual()
+{
+	return vida;
+}
+
