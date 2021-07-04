@@ -4,47 +4,21 @@ ListaProyectiles::ListaProyectiles()
 {
 
 	numero = 0;
-	municion = 10;
 	for (int i = 0; i < MAX_PROYECTILES; i++)
 		lista[i] = 0;
 }
 
 ListaProyectiles::~ListaProyectiles(){
-	//for (int i = 0; i < numero; i++)
-	//{
-	//	delete lista[i];
-	//}
-	//numero = 0;
+	for (int i = 0; i < numero; i++)
+	{
+		delete lista[i];
+	}
 }
 
 bool ListaProyectiles::agregar(Proyectil* d)
 {
-	//if (municion>0)
-	//{
-	//	lista[numero++] = d;
-	//	lista[numero-1]->setDaño(daño);
-	//	municion -= 1;
-	//	return true;
-	//}
-	//else
-	//	return false;
-
 	lista[numero++] = d;
 	return true;
-
-	//for (int i = 0; i < numero; i++)
-	//{
-	//	for (int j = 0; j < numero; j++)
-	//	{
-	//		if (i != j) {
-	//			if ((lista[i]) == (lista[j]))
-	//			{
-	//				return false;
-	//			}
-	//		}
-	//	}
-	//}
-
 }
 
 void ListaProyectiles::destruirContenido()
@@ -76,9 +50,6 @@ void ListaProyectiles::setPos(Vector2D pos)
 		lista[i]->setPos(pos);
 }
 
-void ListaProyectiles::setMunicion(int n) {
-	municion = n;
-}
 
 void ListaProyectiles::eliminar(int index)
 {
@@ -101,7 +72,6 @@ void ListaProyectiles::eliminar(Proyectil* p)
 }
 
 
-//Proyectil* ListaProyectiles::colision(tanque &t)
 
 int ListaProyectiles::getNum() {
 	return numero;
@@ -110,12 +80,3 @@ int ListaProyectiles::getNum() {
 Proyectil* ListaProyectiles::getElem(int n) {
 	return lista[n];
 }
-
-/*Proyectil* ListaProyectiles::colision(tanque &t) {
-	for (int i = 0; i < numero; i++) {
-		if (Interaccion::colision(*(lista[i]), t)) {
-			return lista[i];
-		}
-	}
-	return 0;
-}*/
