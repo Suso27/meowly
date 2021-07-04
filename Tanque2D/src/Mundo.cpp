@@ -4,9 +4,10 @@
 #include <math.h>
 #include "Botiquin.h"
 #include "Corazon.h"
-#include "Filete.h"
+#include "DmgUp.h"
+#include "BulletSpeedUp.h"
 #include <random>
-
+#define N_TIPOS_OBJETO 4 //para la generacion aleatoria
 using namespace std;
 
 Mundo::Mundo(){}
@@ -122,7 +123,7 @@ float get_random_obj(double i, double j)
 void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 {
 	int i = 0;
-	int j = 3;
+	int j = N_TIPOS_OBJETO;
 	float x = get_random_obj(i, j);
 	
 	if (x<1.0)
@@ -131,15 +132,21 @@ void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 		objetos.agregar(aux); // agregar a la lista 
 		}
 	else if (x<2.0)
-		{Filete* aux = new Filete;
+		{DmgUp* aux = new DmgUp;
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 		}
-	else
+	else if (x<3.0)
 		{Botiquin* aux = new Botiquin;
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 		}
+	else
+	{
+		BulletSpeedUp* aux = new BulletSpeedUp;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	}
 	}
 
 bool Mundo::getImpacto() {

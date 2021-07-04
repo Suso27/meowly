@@ -105,3 +105,19 @@ int tanque::getVidaActual()
 	return vida;
 }
 
+float tanque::getvProyectil()
+{
+	return vProyectil;
+}
+
+void tanque::setvProyectil(float vel)
+{
+	vProyectil = vel;
+}
+
+void tanque::aumentarvProyectil()
+{
+	if (vProyectil < 20.0) //por poner un limite
+		++vProyectil;
+}
+

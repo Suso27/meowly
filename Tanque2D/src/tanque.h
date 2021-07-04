@@ -43,11 +43,14 @@ public:
 	Vector2D getPos();
 	void setPos(float x, float y);
 	void setDaño(int dmg);
-	void setVidaMax(int vida);
+	void setVidaMax(int vida); 
 	int getVidaMax();
 	void aumentarVidaMax();
 	void aumentarVida();
 	void aumentarDaño();
 	int getVidaActual();
+	float getvProyectil();
+	void setvProyectil(float vel); //ahora mismo los set no se usan, solo los de aumentar
+	void aumentarvProyectil();
 };
 

@@ -1,11 +1,12 @@
 #pragma once
 #include "Objeto.h"
-class Corazon :
+class DmgUp :
     public Objeto
 {
 public:
+    DmgUp();
     void aplicarEfecto(tanqueJugador& j);
-    Corazon();
+
 
 };
 

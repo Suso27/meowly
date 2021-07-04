@@ -3,10 +3,12 @@
 typedef unsigned char Byte;
 struct ColorRGB
 {
-	ColorRGB(Byte red = 255, Byte green = 255, Byte blue = 255) {
+	ColorRGB(Byte red = 255, Byte green = 255, Byte blue = 255) 
+	{
 		set(red, green, blue);
 	};
-	void set(Byte red = 255, Byte green = 255, Byte blue = 255) {
+	void set(Byte red = 255, Byte green = 255, Byte blue = 255) 
+	{
 		r = red; g = green; b = blue;
 	}
 	void ponColor() {

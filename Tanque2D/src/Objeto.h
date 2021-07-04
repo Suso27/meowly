@@ -17,5 +17,6 @@ public:
 	void dibuja();
 	float distancia(Vector2D punto);
 	virtual void aplicarEfecto(tanqueJugador& j) { };
+	float get_random(double i, double j);
 };
 
