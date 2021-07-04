@@ -21,12 +21,14 @@
   <ItemGroup>
     <ClCompile Include="src\Botiquin.cpp" />
     <ClCompile Include="src\Caja.cpp" />
+    <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Corazon.cpp" />
     <ClCompile Include="src\Filete.cpp" />
     <ClCompile Include="src\Interaccion.cpp" />
     <ClCompile Include="src\ListaCajas.cpp" />
     <ClCompile Include="src\ListaObjetos.cpp" />
     <ClCompile Include="src\ListaProyectiles.cpp" />
+    <ClCompile Include="src\ListaTanques.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Objeto.cpp" />
     <ClCompile Include="src\Pared.cpp" />
@@ -43,12 +45,14 @@
     <ClInclude Include="src\Botiquin.h" />
     <ClInclude Include="src\Caja.h" />
     <ClInclude Include="src\ColorRGB.h" />
+    <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Corazon.h" />
     <ClInclude Include="src\Filete.h" />
     <ClInclude Include="src\Interaccion.h" />
     <ClInclude Include="src\ListaCajas.h" />
     <ClInclude Include="src\ListaObjetos.h" />
     <ClInclude Include="src\ListaProyectiles.h" />
+    <ClInclude Include="src\ListaTanques.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Objeto.h" />
     <ClInclude Include="src\Pared.h" />

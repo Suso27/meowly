@@ -9,10 +9,10 @@ ListaProyectiles::ListaProyectiles()
 }
 
 ListaProyectiles::~ListaProyectiles(){
-	for (int i = 0; i < numero; i++)
+	/*for (int i = 0; i < numero; i++)
 	{
 		delete lista[i];
-	}
+	}*/
 }
 
 bool ListaProyectiles::agregar(Proyectil* d)

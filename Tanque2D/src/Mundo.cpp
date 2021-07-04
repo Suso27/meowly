@@ -7,6 +7,8 @@
 #include "Filete.h"
 #include <random>
 
+using namespace std;
+
 Mundo::Mundo(){}
 Mundo::~Mundo() {
 	objetos.destruirContenido();
@@ -15,8 +17,7 @@ Mundo::~Mundo() {
 void Mundo::dibuja()
 {        
 	tankJ.Dibuja();
-	tankEA.Dibuja();
-	tankEB.Dibuja();
+	tanques.Dibuja();
 	//caja.Dibuja();
 	contenedor.Dibuja();
 	cajas.Dibuja();
@@ -27,19 +28,20 @@ void Mundo::mueve()
 {
 	tankJ.Mueve(0.025f);
 	tankJ.setApuntado(raton.x, raton.y);
-	tankEA.Mueve(0.025f, tankJ.getPos());
-	tankEB.Mueve(0.025f, tankJ.getPos());
+	tanques.Mueve(0.025f, tankJ.getPos());
     //Interaccion::rebote(tankJ, caja);
 	for (int i = 0; i < contenedor.getNumero(); i++) {
 		Interaccion::rebote(tankJ, *contenedor[i]);
-		Interaccion::rebote(tankEA, *contenedor[i]);
-		Interaccion::rebote(tankEB, *contenedor[i]);
+		for (int j = 0; j < tanques.getNumero(); j++) {
+			Interaccion::rebote(*tanques[j], *contenedor[i]);
+		}
 	}
 
 	for (int i = 0; i < cajas.getNumero(); i++) {
 		Interaccion::rebote(tankJ, *cajas[i]);
-		Interaccion::rebote(tankEA, *cajas[i]);
-		Interaccion::rebote(tankEB, *cajas[i]);
+		for (int j = 0; j < tanques.getNumero(); j++) {
+			Interaccion::rebote(*tanques[j], *cajas[i]);
+		}
 	}
 
 	for (int i = 0; i < objetos.getNumero(); i++) {
@@ -59,12 +61,7 @@ void Mundo::mueve()
 
 void Mundo::inicializa()
 {
-	tankJ.Inicializa(-0.75,0.0);
-	tankEA.Inicializa(1.7,-1.0);
-	tankEB.Inicializa(1.7, 0.0);
-	//caja.Inicializa(-0.04f, 0.2f, 0.04f,-0.2f);
-	contenedor.Inicializa(4);
-	cajas.Inicializa(2);
+	tankJ.Inicializa(0.0, 0.0);
 
 
 	
@@ -144,6 +141,49 @@ void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 		objetos.agregar(aux); // agregar a la lista 
 		}
 	}
+
+bool Mundo::getImpacto() {
+	return impacto;
+}
+
+int Mundo::getNumTanques() {
+	return tanques.getNumero();
+}
+
+bool Mundo::cargarNivel() {
+	nivel++;
+
+	objetos.destruirContenido();
+	tanques.destruirContenido();
+	cajas.destruirContenido();
+
+	if (nivel == 1) {
+
+		tankJ.Inicializa(-0.75, 0.0);
+		tanques.agregar(new tanqueEnemigoA(1.7f, 0.0f));
+		contenedor.Inicializa(4);
+		cajas.Inicializa(1);
+	}
+	if (nivel == 2) {
+		tankJ.Inicializa(-0.7, 1.0);
+		tanques.agregar(new tanqueEnemigoA(1.7f, -1.0f));
+		tanques.agregar(new tanqueEnemigoB(1.7f, 1.0f));
+		contenedor.Inicializa(4);
+		cajas.Inicializa(2);
+	}
+	if (nivel == 3) {
+		tankJ.Inicializa(-1.4, -0.8);
+		tanques.agregar(new tanqueEnemigoB(0.0f, 0.8f));
+		tanques.agregar(new tanqueEnemigoB(0.0f, -0.8f));
+		tanques.agregar(new tanqueEnemigoB(0.8f, -0.8f));
+		tanques.agregar(new tanqueEnemigoA(0.8f, 0.8f));
+		contenedor.Inicializa(4);
+		cajas.Inicializa(3);
+	}
+	if (nivel <= 3)
+		return true;
+	return false;
+}
 	
 
 

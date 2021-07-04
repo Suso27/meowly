@@ -1,19 +1,13 @@
 #include "tanque.h"
 #include"freeglut.h"
 
+tanque::tanque() {
+}
 
-//void tanque::Inicializa() {
-//	posicion = 0;
-//	vel = 0.01f;
-//	proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
-//	color.set(255, 255, 255);
-//}
-//
-//
-
-//tanque::tanque() {
-//	Inicializa();
-//}
+tanque::tanque(float x, float y) {
+	posicion.x = x;
+	posicion.y = y;
+}
 
 void tanque::Dibuja() {
 
@@ -68,6 +62,11 @@ void tanque::Dispara() {
 
 Vector2D tanque::getPos() {
 	return posicion;
+}
+
+void tanque::setPos(float x, float y) {
+	posicion.x = x;
+	posicion.y = y;
 }
 
 void tanque::setDaño(int dmg)
