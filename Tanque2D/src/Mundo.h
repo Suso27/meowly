@@ -11,11 +11,13 @@
 #include "DmgUp.h"
 #include "BulletSpeedUp.h"
 #include "Interaccion.h"
+#include "SpeedUp.h"
+#include "RebotesUp.h"
 
 #define ALTO 750.0F
 #define ANCHO 1300.0F
 #define ESCALA 300.0F
-#define N_TIPOS_OBJETO 4 //para la generacion aleatoria
+#define N_TIPOS_OBJETO 6 //para la generacion aleatoria
 
 class Mundo
 {

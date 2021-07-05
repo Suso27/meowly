@@ -34,18 +34,31 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void Dispara();
+
 	void setVel(float vx, float vy);
+	void aumentarVel();
+
 	void setApuntado(float x, float y);
 	void setApuntado(Vector2D);
+
 	Vector2D getPos();
 	void setPos(float x, float y);
+
 	void setDaño(int dmg);
+	void aumentarDaño();
+
 	void setVidaMax(int vida);
-	void aumentarVproyectil(int v);
 	int getVidaMax();
 	void aumentarVidaMax();
+
+	void aumentarVproyectil(int v);
+	float getvProyectil();
+	void setvProyectil(float vel); //ahora mismo los set no se usan, solo los de aumentar
+
+	int getnMaxRebotes();
+	void aumentarnMaxRebotes();
+
 	void aumentarVida();
-	void aumentarDaño();
 	int getVidaActual();
 };
 
