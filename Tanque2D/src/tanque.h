@@ -13,7 +13,7 @@ protected:
 	int vida;
 	int vidaMax;
 	float cadencia;//periodo con el que dispara
-	float tRecarga=0;//tiempo que ha pasado desde el último disparo
+	float tRecarga = 0;//tiempo que ha pasado desde el último disparo
 
 	float daño;
 	int nMaxRebotes = 2;
@@ -28,7 +28,7 @@ protected:
 	ListaProyectiles proyectiles;
 
 public:
-	
+
 
 	friend class Interaccion;
 	tanque();
@@ -37,20 +37,34 @@ public:
 	void Dibuja();
 	void Mueve(float t);
 	void Dispara();
+
 	void setVel(float vx, float vy);
+	void aumentarVel();
+
 	void setApuntado(float x, float y);
 	void setApuntado(Vector2D);
+
 	Vector2D getPos();
 	void setPos(float x, float y);
+
 	void setDaño(int dmg);
-	void setVidaMax(int vida); 
+	void aumentarDaño();
+
+	void setVidaMax(int vida);
 	int getVidaMax();
 	void aumentarVidaMax();
+
 	void aumentarVida();
-	void aumentarDaño();
 	int getVidaActual();
+
 	float getvProyectil();
 	void setvProyectil(float vel); //ahora mismo los set no se usan, solo los de aumentar
 	void aumentarvProyectil();
+
+	int getnMaxRebotes();
+	void aumentarnMaxRebotes();
+
+	/*float getCadencia();
+	void aumentarCadencia();*/
 };
 

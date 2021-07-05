@@ -7,7 +7,10 @@
 #include "DmgUp.h"
 #include "BulletSpeedUp.h"
 #include <random>
-#define N_TIPOS_OBJETO 4 //para la generacion aleatoria
+#include "RebotesUp.h"
+#include "SpeedUp.h"
+
+#define N_TIPOS_OBJETO 6 //para la generacion aleatoria
 using namespace std;
 
 Mundo::Mundo(){}
@@ -141,9 +144,21 @@ void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 		}
-	else
+	else if (x<4.0)
 	{
 		BulletSpeedUp* aux = new BulletSpeedUp;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	}
+	else if (x<5.0)
+	{
+		RebotesUp* aux = new RebotesUp;
+		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	}
+	else
+	{
+		SpeedUp* aux = new SpeedUp;
 		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 	}
