@@ -1,8 +1,6 @@
 #pragma once
 #define MAX_CAJAS 20
 #include "Caja.h"
-#include "Interaccion.h"
-
 
 class ListaCajas
 {

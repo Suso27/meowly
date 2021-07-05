@@ -9,20 +9,19 @@ class ListaProyectiles
 
 	Proyectil* lista[MAX_PROYECTILES];
 	int numero;
-	//int municion;
 
 public:
 	ListaProyectiles();
+	ListaProyectiles(ListaProyectiles&);
 	virtual ~ListaProyectiles();
 	bool agregar(Proyectil* d);
 	void destruirContenido();
 	void setPos(Vector2D);
-	//void setMunicion(int);
 	void mueve(float t);
 	void dibuja();
 	void eliminar(int index);
 	void eliminar(Proyectil* p);	
 	int getNum();
-	Proyectil* getElem(int n);
+	Proyectil operator[](int i);
 };
 

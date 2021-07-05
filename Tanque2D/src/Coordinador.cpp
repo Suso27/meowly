@@ -50,18 +50,22 @@ void Coordinador::teclaEspecial(unsigned char key)
 
 void Coordinador::mueve()
 {
-	if (estado == JUEGO || estado == INICIO)
+
+	if (estado == INICIO) {
+		mundo.mueve();
+	}
+	if (estado == JUEGO)
 	{
 		mundo.mueve();
-		//if (mundo.getNumEsferas() == 0)
-		//{
-		//	if(!mundo.cargarNivel())
-		//	estado = FIN;
-		//}
-		//if (mundo.getImpacto())
-		//{
-		//	estado = GAMEOVER;
-		//}
+		if (mundo.getNumTanques() == 0)
+		{
+			if(!mundo.cargarNivel())
+			estado = FIN;
+		}
+		if (mundo.getVida()==0)
+		{
+			estado = GAMEOVER;
+		}
 	}
 }
 void Coordinador::tecla(unsigned char key)

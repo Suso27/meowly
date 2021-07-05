@@ -1,11 +1,18 @@
 #include "ListaProyectiles.h"
-#include "Interaccion.h"
+
 ListaProyectiles::ListaProyectiles()
 {
 
 	numero = 0;
 	for (int i = 0; i < MAX_PROYECTILES; i++)
 		lista[i] = 0;
+}
+
+ListaProyectiles::ListaProyectiles(ListaProyectiles& l) {
+	numero = l.numero;
+	for (int i = 0; i < numero; i++) {
+		lista[i] = new Proyectil(l[i]);
+	}
 }
 
 ListaProyectiles::~ListaProyectiles(){
@@ -77,6 +84,8 @@ int ListaProyectiles::getNum() {
 	return numero;
 }
 
-Proyectil* ListaProyectiles::getElem(int n) {
-	return lista[n];
+Proyectil ListaProyectiles::operator[](int n) {
+	return *lista[n];
 }
+
+

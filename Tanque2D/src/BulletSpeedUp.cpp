@@ -1,9 +1,7 @@
 #include "BulletSpeedUp.h"
 void BulletSpeedUp::aplicarEfecto(tanqueJugador& j)
 {
-	if (j.getVidaActual() < j.getVidaMax())
-		j.aumentarVida();
-
+	j.aumentarVproyectil(2);
 }
 
 BulletSpeedUp::BulletSpeedUp() {

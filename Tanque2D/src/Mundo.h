@@ -1,24 +1,25 @@
 #pragma once
-#include <vector>
-#include "tanque.h"
-#include "Vector2D.h"
+#include <random>
 #include "tanqueJugador.h"
-#include "tanqueEnemigo.h"
 #include "tanqueEnemigoA.h"
 #include "tanqueEnemigoB.h"
-#include "Pared.h"
-#include "Caja.h"
 #include "ListaCajas.h"
 #include "ListaObjetos.h"
 #include "ListaTanques.h"
+#include "Botiquin.h"
+#include "Corazon.h"
+#include "DmgUp.h"
+#include "BulletSpeedUp.h"
+#include "Interaccion.h"
+
 #define ALTO 750.0F
 #define ANCHO 1300.0F
 #define ESCALA 300.0F
+#define N_TIPOS_OBJETO 4 //para la generacion aleatoria
 
 class Mundo
 {
 private:
-	bool impacto;
 	int nivel = 0;
 
 	Vector2D raton;
@@ -30,6 +31,7 @@ private:
 	ListaCajas cajas;
 	ListaObjetos objetos;
 	ListaTanques tanques;
+
 public: 
 	Mundo();
 	~Mundo();
@@ -42,6 +44,6 @@ public:
 	void crearObjeto();
 
 	bool cargarNivel();
-	bool getImpacto();
+	bool getVida();
 	int getNumTanques();
 };

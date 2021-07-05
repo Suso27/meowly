@@ -1,9 +1,15 @@
 #include "tanqueJugador.h"
-#include"freeglut.h"
 
 tanqueJugador::tanqueJugador(){}
 
 tanqueJugador::~tanqueJugador() {}
+
+void tanqueJugador::Dispara() {
+	if (municion >= proyectiles.getNum()) {
+		Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+		proyectiles.agregar(d);
+	}
+}
 
 void tanqueJugador::Inicializa(float x,float y) {
 	posicion.x = x;
@@ -12,10 +18,11 @@ void tanqueJugador::Inicializa(float x,float y) {
 	color.set(132, 134, 59);//233,208,154
 	vida = 3;
 	vidaMax = 3;
-	nMaxRebotes = 3;
-	vProyectil = 5;
+	nMaxRebotes = 1;
+	vProyectil = 3;
 	daño = 1;
 	proyectiles.destruirContenido();
+	municion = 2;
 }
 
 

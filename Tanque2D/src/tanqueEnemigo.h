@@ -4,6 +4,8 @@
 
 class tanqueEnemigo : public tanque{
 public:
+	friend class Interaccion;
+
 	tanqueEnemigo();
 	virtual ~tanqueEnemigo();
 	tanqueEnemigo(float x, float y);

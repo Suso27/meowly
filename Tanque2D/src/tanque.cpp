@@ -1,5 +1,4 @@
 #include "tanque.h"
-#include"freeglut.h"
 
 tanque::tanque() {
 }
@@ -38,12 +37,6 @@ void tanque::Mueve(float t) {
 void tanque::setVel(float vx, float vy) {
 	velocidad.x = vx;
 	velocidad.y = vy;
-}
-
-void tanque::aumentarVel()
-{
-	velocidad.x += 0.03f;
-	velocidad.y += 0.03f;
 }
 
 void tanque::setApuntado(float x, float y) {
@@ -106,36 +99,12 @@ void tanque::aumentarDaño()
 	++daño;
 }
 
+void tanque::aumentarVproyectil(int v) {
+	vProyectil += v;
+}
+
 int tanque::getVidaActual()
 {
 	return vida;
 }
-
-float tanque::getvProyectil()
-{
-	return vProyectil;
-}
-
-void tanque::setvProyectil(float vel)
-{
-	vProyectil = vel;
-}
-
-void tanque::aumentarvProyectil()
-{
-	if (vProyectil < 20.0) //por poner un limite
-		++vProyectil;
-}
-
-int tanque::getnMaxRebotes()
-{
-	return nMaxRebotes;
-}
-
-void tanque::aumentarnMaxRebotes()
-{
-	if (nMaxRebotes < 6)
-		++nMaxRebotes;
-}
-
 
