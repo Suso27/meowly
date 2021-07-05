@@ -60,5 +60,6 @@ public:
 
 	void aumentarVida();
 	int getVidaActual();
+
 };
 

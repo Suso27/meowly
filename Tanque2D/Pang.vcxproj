@@ -22,6 +22,7 @@
     <ClCompile Include="src\Botiquin.cpp" />
     <ClCompile Include="src\BulletSpeedUp.cpp" />
     <ClCompile Include="src\Caja.cpp" />
+    <ClCompile Include="src\CajaMunicion.cpp" />
     <ClCompile Include="src\Coordinador.cpp" />
     <ClCompile Include="src\Corazon.cpp" />
     <ClCompile Include="src\DmgUp.cpp" />
@@ -32,9 +33,13 @@
     <ClCompile Include="src\ListaTanques.cpp" />
     <ClCompile Include="src\Mundo.cpp" />
     <ClCompile Include="src\Objeto.cpp" />
+    <ClCompile Include="src\ObjetoCañon.cpp" />
+    <ClCompile Include="src\ObjetoRicochet.cpp" />
     <ClCompile Include="src\Pared.cpp" />
     <ClCompile Include="src\Principal.cpp" />
     <ClCompile Include="src\Proyectil.cpp" />
+    <ClCompile Include="src\ProyectilCañon.cpp" />
+    <ClCompile Include="src\ProyectilRicochet.cpp" />
     <ClCompile Include="src\RebotesUp.cpp" />
     <ClCompile Include="src\SpeedUp.cpp" />
     <ClCompile Include="src\tanque.cpp" />
@@ -48,6 +53,7 @@
     <ClInclude Include="src\Botiquin.h" />
     <ClInclude Include="src\BulletSpeedUp.h" />
     <ClInclude Include="src\Caja.h" />
+    <ClInclude Include="src\CajaMunicion.h" />
     <ClInclude Include="src\ColorRGB.h" />
     <ClInclude Include="src\Coordinador.h" />
     <ClInclude Include="src\Corazon.h" />
@@ -59,8 +65,12 @@
     <ClInclude Include="src\ListaTanques.h" />
     <ClInclude Include="src\Mundo.h" />
     <ClInclude Include="src\Objeto.h" />
+    <ClInclude Include="src\ObjetoCañon.h" />
+    <ClInclude Include="src\ObjetoRicochet.h" />
     <ClInclude Include="src\Pared.h" />
     <ClInclude Include="src\Proyectil.h" />
+    <ClInclude Include="src\ProyectilCañon.h" />
+    <ClInclude Include="src\ProyectilRicochet.h" />
     <ClInclude Include="src\RebotesUp.h" />
     <ClInclude Include="src\SpeedUp.h" />
     <ClInclude Include="src\tanque.h" />

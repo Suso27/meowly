@@ -34,7 +34,7 @@ void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
 }
 
 bool Interaccion::colision(Proyectil& p, tanque& t){
-	if ((t.posicion - p.posicion).modulo() < 0.05) {
+	if ((t.posicion - p.posicion).modulo() < (p.radio+0.04f)) {
 		t.vida--;
 		return true;
 	}

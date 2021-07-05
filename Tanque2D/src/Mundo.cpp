@@ -103,32 +103,42 @@ void Mundo::crearObjeto() //se llama a esta funcion cada 10s desde principal.cpp
 	else if (x < 2.0)
 	{
 		DmgUp* aux = new DmgUp;
-		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 	}
 	else if (x < 3.0)
 	{
 		Botiquin* aux = new Botiquin;
-		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 	}
 	else if (x < 4.0)
 	{
 		BulletSpeedUp* aux = new BulletSpeedUp;
-		//aux->setRadio(0.75 + i * 0.25);
 		objetos.agregar(aux); // agregar a la lista 
 	}
 	else if (x < 5.0)
 	{
 		RebotesUp* aux = new RebotesUp;
-		//aux->setRadio(0.75 + i * 0.25);
+		objetos.agregar(aux); // agregar a la lista 
+	}
+	else if (x < 6.0)
+	{
+		SpeedUp* aux = new SpeedUp;
+		objetos.agregar(aux); // agregar a la lista 
+	}
+	else if (x < 7.0)
+	{
+		ObjetoRicochet* aux = new ObjetoRicochet;
+		objetos.agregar(aux); // agregar a la lista 
+	}
+	else if (x < 8.0)
+	{
+		ObjetoCañon* aux = new ObjetoCañon;
 		objetos.agregar(aux); // agregar a la lista 
 	}
 	else
 	{
-		SpeedUp* aux = new SpeedUp;
-		//aux->setRadio(0.75 + i * 0.25);
-		objetos.agregar(aux); // agregar a la lista 
+	CajaMunicion* aux = new CajaMunicion;
+	objetos.agregar(aux); // agregar a la lista 
 	}
 }
 

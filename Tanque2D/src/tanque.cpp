@@ -123,6 +123,8 @@ int tanque::getVidaActual()
 	return vida;
 }
 
+
+
 int tanque::getnMaxRebotes()
 {
 	return nMaxRebotes;
