@@ -35,7 +35,7 @@ void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
 }
 
 bool Interaccion::colision(Proyectil& p, tanque& t){
-	if ((t.posicion - p.posicion).modulo() < 0.05) {
+	if ((t.posicion - p.posicion).modulo() < (0.04+p.getRadio())) {
 		t.vida--;
 		return true;
 	}
@@ -82,7 +82,7 @@ void Interaccion::colision(ListaProyectiles& l1, ListaProyectiles& l2) {
 	int j = 0;
 	while(i<l1.numero) {
 		while (j<l2.numero){
-			if ((l1[i].posicion - l2[j].posicion).modulo() < 0.02) {
+			if ((l1[i].posicion - l2[j].posicion).modulo() < (l1[i].getRadio()+l2[j].getRadio())) {
 				l1.eliminar(i);
 				l2.eliminar(j);
 				i--;

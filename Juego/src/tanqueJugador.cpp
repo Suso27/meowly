@@ -15,9 +15,31 @@ tanqueJugador::tanqueJugador():tanque(0.0f,0.0f,"imagenes/Jugador.png"){
 tanqueJugador::~tanqueJugador() {}
 
 void tanqueJugador::Dispara() {
-	if (municion >= proyectiles.getNum()) {
-		Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-		proyectiles.agregar(d);
+	switch (tipo) {
+	case 0:
+		if (municion >= proyectiles.getNum()) {
+			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(d);
+		}
+		break;
+	case 1:
+		if (municion >= proyectiles.getNum()) {
+			ProyectilCañon* c = new ProyectilCañon(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(c);
+		}
+		break;
+	case 2:
+		if (municion >= proyectiles.getNum()) {
+			ProyectilRicochet* r = new ProyectilRicochet(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(r);
+		}
+		break;
+	default:
+		if (municion >= proyectiles.getNum()) {
+			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(d);
+		}
+		break;
 	}
 }
 

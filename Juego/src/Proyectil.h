@@ -28,5 +28,6 @@ public:
 	//bool getDisparado();//también innecesario
 	void setDaño(int dmg);
 	Vector2D getPos() const;
+	float getRadio();
 };
 

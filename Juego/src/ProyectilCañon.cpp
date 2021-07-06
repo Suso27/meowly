@@ -5,6 +5,6 @@ ProyectilCañon::ProyectilCañon(Vector2D vel, Vector2D pos, int d, int n, float v
 	nMaxRebotes = n;
 	daño = d+10;
 	posicion = pos;
-	velocidad = vel * velModulo*0.75;
-	radio = 0.1f;
+	velocidad = vel * velModulo*0.5;
+	radio = 0.08f; 
 };
