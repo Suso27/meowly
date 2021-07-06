@@ -70,3 +70,18 @@ void tanqueJugador::mueveTecla(unsigned char key) {
 }
 //habría que lograr que se moviese en diagonales también
 
+void tanqueJugador::setTipoDisparo(int type)
+{
+	tipo = type;
+}
+
+int tanqueJugador::getMunicion()
+{
+	return municion;
+}
+
+void tanqueJugador::aumentarMunicion()
+{
+	++municion;
+}
+

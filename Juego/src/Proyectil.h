@@ -5,7 +5,7 @@
 class Proyectil
 {
 	friend class Interaccion;
-private:
+protected:
 	float radio;
 	int rebotes;//contador de los rebotes
 
