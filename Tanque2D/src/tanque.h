@@ -1,6 +1,7 @@
 #pragma once
 #include "ListaProyectiles.h"
-
+//#include "ETSIDI.h"
+//using ETSIDI::SpriteSequence;
 
 class tanque {
 protected:
@@ -24,6 +25,8 @@ protected:
 	Vector2D velocidad;
 	ListaProyectiles proyectiles;
 
+	//SpriteSequence spriteTanque{ "imagenes/Purple/Bodies/body_halftrack.png", 2 };
+	//SpriteSequence spriteAnimacionTanque{ "imagenes/Purple/Weapons/turret_01_mk1.png", 8 };
 public:
 	
 

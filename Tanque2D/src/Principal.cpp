@@ -21,6 +21,11 @@ int main(int argc, char* argv[])
 	glutCreateWindow("MiJuego");
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
+
+	glEnable(GL_LIGHT0);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_COLOR_MATERIAL);
 	glOrtho(-ANCHO / (2*ESCALA), ANCHO / (2*ESCALA), - ALTO / (2*ESCALA), ALTO / (2*ESCALA), 0.0f, 1.0f);
 
 

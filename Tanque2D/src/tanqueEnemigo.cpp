@@ -1,7 +1,9 @@
 #include "tanqueEnemigo.h"
 
 
-tanqueEnemigo::tanqueEnemigo(){}
+tanqueEnemigo::tanqueEnemigo(){
+
+}
 
 tanqueEnemigo::tanqueEnemigo(float x, float y):tanque(x,y) {}
 
@@ -28,6 +30,9 @@ void tanqueEnemigo::Mueve(float t,Vector2D posJ) {
 		posicion = posicion + velocidad;
 	}
 	proyectiles.mueve(t);
+
+	/*spriteTanque.loop();
+	spriteAnimacionTanque.loop();*/
 }
 
 void tanqueEnemigo::obstaculos() {

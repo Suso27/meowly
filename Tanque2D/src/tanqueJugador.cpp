@@ -1,11 +1,12 @@
 #include "tanqueJugador.h"
 
-tanqueJugador::tanqueJugador(){}
+tanqueJugador::tanqueJugador(){
+	
+}
 
 tanqueJugador::~tanqueJugador() {}
 
 void tanqueJugador::Dispara() {
-
 	switch (tipo) {
 		case 0:
 			if (municion >= proyectiles.getNum()) {
@@ -47,6 +48,16 @@ void tanqueJugador::Inicializa(float x,float y) {
 	proyectiles.destruirContenido();
 	municion = 2;
 	tipo = 0;
+
+	/*spriteTanque = { "imagenes/Purple/Bodies/body_halftrack.png", 2 };
+	spriteAnimacionTanque = { "imagenes/Purple/Weapons/turret_01_mk1.png", 8 };
+	//sprite
+	spriteTanque.setCenter(0.2, 0.2);
+	spriteTanque.setSize(0.4, 0.4);
+	spriteAnimacionTanque.setCenter(0.2, 0.2);
+	spriteAnimacionTanque.setSize(0.4, 0.4);
+	spriteAnimacionTanque.setState(0, false);
+	spriteTanque.setState(0, false);*/
 }
 
 

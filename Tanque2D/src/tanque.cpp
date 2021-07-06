@@ -12,7 +12,7 @@ void tanque::Dibuja() {
 
 	//proyectil.dibuja();
 	proyectiles.dibuja();
-
+	//spriteTanque.draw();
 
 	glBegin(GL_QUADS);              
       glColor3f(color.r/255.0f,color.g/255.0f, color.b/255.f);
@@ -29,10 +29,21 @@ void tanque::Dibuja() {
 	glVertex2d(apuntado.x+posicion.x, apuntado.y+posicion.y);
 	glEnd();
 
+	//sprite
 
+/*	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 0);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	//gestion de direccion y animacion
+	spriteAnimacionTanque.draw();
+	spriteTanque.draw();
+	glPopMatrix();*/
+	
 }
 void tanque::Mueve(float t) {
 	proyectiles.mueve(t);
+	/*spriteTanque.loop();
+	spriteAnimacionTanque.loop();*/
 }
 void tanque::setVel(float vx, float vy) {
 	velocidad.x = vx;
