@@ -14,4 +14,8 @@ Botiquin::Botiquin() {
 
 	color.set(250, 100, 100);
 
+	//sprite
+	spriteObjeto = { "imagenes/botiquin.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

@@ -16,9 +16,11 @@ bool Interaccion::colision(tanque& t, Pared& p) {
 bool Interaccion::colision(Objeto o, tanqueJugador j)
 {
 	float dist = o.distancia(j.getPos());
-	if (dist < 0.07f)
+	if (dist < 0.09f)
 		return true;
 	return false;
+
+	
 }
 
 void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
@@ -28,7 +30,6 @@ void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
 		if (colision(*(lo.lista[i]), j)) {
 			lo[i]->aplicarEfecto(j);
 			lo.eliminar(i);
-
 		}
 	}
 }

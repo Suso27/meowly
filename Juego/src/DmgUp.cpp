@@ -14,4 +14,8 @@ DmgUp::DmgUp() {
 
 	color.set(0, 0, 255);
 
+	//sprite
+	spriteObjeto = { "imagenes/dmgup.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

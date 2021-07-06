@@ -16,42 +16,28 @@ float Objeto::get_random(double i, double j)
 	std::uniform_real_distribution<double> dist(i, j);
 	return float(dist(rd));
 }
-Objeto::Objeto(const char* s){
-	float LO  = -9.9f; //serian todos 10, un poco menos para evitar las paredes de la caja
-	float HI  = 9.9f;
-	posicion.x = 0.1f * (get_random(LO, HI));
-	posicion.y = 0.1f * (get_random(LO, HI));
 
-	this->s = s;
-}
 
-Objeto::Objeto() :s("imagenes/cora.png") {
+Objeto::Objeto() {
+	int LO = -9.9; //serian todos 10, un poco menos para evitar las paredes de la caja
+	int HI = 9.9;
+	posicion.x = 0.1 * (get_random(LO, HI));
+	posicion.y = 0.1 * (get_random(LO, HI));
+
+	//sprite
+	spriteObjeto = { "imagenes/Ammo.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }
 
 
 void Objeto::dibuja() {
-	/*glBegin(GL_QUADS);
-	glColor3f(color.r , color.g , color.b ); /// 255.f
-	glVertex2f(posicion.x - 0.02f, posicion.y - 0.02f);
-	glVertex2f(posicion.x + 0.02f, posicion.y - 0.02f);
-	glVertex2f(posicion.x + 0.02f, posicion.y + 0.02f);
-	glVertex2f(posicion.x - 0.02f, posicion.y + 0.02f);
-	glEnd();*/
-
-
-
-	glEnable(GL_TEXTURE_2D);
-	glDisable(GL_LIGHTING);
-	glBindTexture(GL_TEXTURE_2D, ETSIDI::getTexture(s).id);
-	glBegin(GL_POLYGON);
-	glColor3f(1, 1, 1);
-	glTexCoord2d(0, 0); glVertex2f(posicion.x - 0.05f, posicion.y + 0.05f);
-	glTexCoord2d(0, 1); glVertex2f(posicion.x - 0.05f, posicion.y - 0.05f);
-	glTexCoord2d(1, 1); glVertex2f(posicion.x + 0.05f, posicion.y - 0.05f);
-	glTexCoord2d(1, 0); glVertex2f(posicion.x + 0.05f, posicion.y + 0.05f);
-	glEnd();
-	glEnable(GL_LIGHTING);
-	glDisable(GL_TEXTURE_2D);
+	glPushMatrix();
+	glTranslatef(posicion.x, posicion.y, 0);
+	glColor3f(1.0f, 0.0f, 0.0f);
+	//gestion de direccion y animacion
+	spriteObjeto.draw();
+	glPopMatrix();
 
 }
 

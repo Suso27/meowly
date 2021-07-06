@@ -12,4 +12,8 @@ BulletSpeedUp::BulletSpeedUp() {
 
 	color.set(0, 255, 0);
 
+	//sprite
+	spriteObjeto = { "imagenes/bulletspeed.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

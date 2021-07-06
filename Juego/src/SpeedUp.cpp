@@ -14,4 +14,8 @@ SpeedUp::SpeedUp() {
 
 	color.set(0, 255, 0);
 
+	//sprite
+	spriteObjeto = { "imagenes/spd.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

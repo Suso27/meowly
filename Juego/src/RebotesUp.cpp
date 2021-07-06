@@ -13,4 +13,8 @@ RebotesUp::RebotesUp() {
 
 	color.set(30, 70, 50);
 
+	//sprite
+	spriteObjeto = { "imagenes/espejo.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

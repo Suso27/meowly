@@ -13,4 +13,8 @@ CajaMunicion::CajaMunicion() {
 
 	color.set(0, 0, 15);
 
+	//sprite
+	spriteObjeto = { "imagenes/Ammo.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

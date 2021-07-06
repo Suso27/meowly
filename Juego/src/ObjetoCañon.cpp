@@ -13,4 +13,8 @@ ObjetoCañon::ObjetoCañon() {
 
 	color.set(163, 73, 164);
 
+	//sprite
+	spriteObjeto = { "imagenes/canon.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }

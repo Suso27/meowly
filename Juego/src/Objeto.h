@@ -3,18 +3,22 @@
 #include <ctime>
 #include "ColorRGB.h"
 #include "tanqueJugador.h"
+#include "ETSIDI.h"
+using ETSIDI::Sprite;
 class Objeto
 {
 	friend class Interaccion;
 protected:
 	Vector2D posicion;
 	ColorRGB color;
-	const char* s="imagenes/cora.png";
+
+
+	Sprite spriteObjeto{ "imagenes/cora.png"};
 public:
 	Vector2D getPos();
 	//intentar meter el setPos(vector2D)
 	void setPos(Vector2D pos);
-	Objeto(const char* s);
+
 	Objeto();
 	void dibuja();
 	float distancia(Vector2D punto);

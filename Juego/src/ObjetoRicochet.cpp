@@ -13,4 +13,8 @@ ObjetoRicochet::ObjetoRicochet() {
 
 	color.set(255, 233, 0);
 
+	//sprite
+	spriteObjeto = { "imagenes/ricochet.png" };
+	spriteObjeto.setCenter(0, 0);
+	spriteObjeto.setSize(0.1, 0.1);
 }
