@@ -43,6 +43,9 @@ public:
 	void inicializa();
 	void mueve();
 	void dibuja();
+	void dibujaTexto(const char* string, float x, float y);
+	void dibujaStats();
+
 	void teclaEspecial(unsigned char);
 	void setRaton(int x, int y);
 	Vector2D getRaton();

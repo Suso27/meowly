@@ -10,7 +10,7 @@ void Coordinador::dibuja()
 	if (estado == INICIO) {
 		mundo.inicializa();
 		mundo.dibuja();
-
+		
 
 		dibujaCartel("imagenes/controles.png", -0.8f, -0.2f, 0.8f, -1.0f);
 		dibujaCartel("imagenes/empezar.png", -0.5f, 0.9f, 0.5f, 0.3f);
@@ -18,6 +18,7 @@ void Coordinador::dibuja()
 	}
 	else if (estado == JUEGO)
 	{
+		mundo.dibujaStats();
 		mundo.dibuja();
 	}
 	else if (estado == PAUSA)

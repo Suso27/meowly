@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 	//Registrar los callbacks
 	glutDisplayFunc(OnDraw);
 	glutTimerFunc(25, OnTimer, 0);//le decimos que dentro de 25ms llame 1 vez a la funcion OnTimer()
-	glutTimerFunc(FRECUENCIA_OBJETOS, CreateObject, 0); //cada 10s llama a la funcion para crear un objeto
+	glutTimerFunc(FRECUENCIA_OBJETOS, CreateObject, 0); //cada 15s llama a la funcion para crear un objeto
 	glutKeyboardFunc(OnKeyboardDown);
 	//glutSpecialFunc(onSpecialKeyboardDown);
 	glutPassiveMotionFunc(getMouse);

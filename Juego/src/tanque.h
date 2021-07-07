@@ -30,10 +30,14 @@ public:
 	tanque(float x, float y, const char*);
 	//virtual void Inicializa(float x,float y)=0;
 	void Dibuja() const;
+
 	void Mueve(float t);
 	void Dispara();
 	void setVel(float vx, float vy);
 	void aumentarVel();
+
+	float getVel();
+	
 
 	void aumentarVproyectil(int v);
 
@@ -45,6 +49,7 @@ public:
 
 	void setDaño(int dmg);
 	void aumentarDaño();
+	int getDaño();
 
 	void setVidaMax(int vida);
 	int getVidaMax() const;

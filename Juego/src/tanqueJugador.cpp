@@ -90,11 +90,16 @@ void tanqueJugador::mueveTecla(unsigned char key) {
 		break;
 	}
 }
-//habría que lograr que se moviese en diagonales también
+
 
 void tanqueJugador::setTipoDisparo(int type)
 {
 	tipo = type;
+}
+
+int tanqueJugador::getTipoDisparo()
+{
+	return tipo;
 }
 
 int tanqueJugador::getMunicion()

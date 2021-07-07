@@ -12,7 +12,7 @@ public:
 	void Inicializa(float x,float y);
 	void mueveTecla(unsigned char key);
 	void setTipoDisparo(int type);
-
+	int getTipoDisparo();
 	int getMunicion();
 	void aumentarMunicion();
 };
