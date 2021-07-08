@@ -1,5 +1,5 @@
 #include "Mundo.h"
-
+#include <string>
 using namespace std;
 
 Mundo::Mundo(){}
@@ -14,6 +14,65 @@ void Mundo::dibuja()
 	contenedor.Dibuja();
 	cajas.Dibuja();
 	objetos.Dibuja();
+}
+void Mundo::dibujaTexto(const char* string, float x, float y)
+{
+
+	const char* c;
+	glRasterPos2f(x, y);
+	for (c = string; *c != '\0'; c++)
+	{
+		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, *c);
+	}
+
+}
+
+void Mundo::dibujaStats()
+{
+	int v = tankJ.getVidaActual();
+	int m = tankJ.getMunicion();
+	int d = tankJ.getDaño();
+	float s = tankJ.getVel();
+	int r = tankJ.getnMaxRebotes();
+	int b = tankJ.getvProyectil();
+	int t = tankJ.getTipoDisparo();
+	std::string vs = std::to_string(v);
+	std::string ms = std::to_string(m);
+	std::string ds = std::to_string(d);
+	std::string ss = std::to_string(s);
+	std::string rs = std::to_string(r);
+	std::string bs = std::to_string(b);
+	const char* pcharv = vs.c_str();
+	const char* pcharm = ms.c_str();
+	const char* pchard = ds.c_str();
+	const char* pchars = ss.c_str();
+	const char* pcharr = rs.c_str();
+	const char* pcharb = bs.c_str();
+	dibujaTexto("hp:", -1.7, 1.1);
+	dibujaTexto("ammo:", -1.7, 0.9);
+	dibujaTexto("damage:", -1.7, 0.7);
+	dibujaTexto("speed:", -1.7, 0.5);
+	dibujaTexto("rebotes:", -1.7, 0.3);
+	dibujaTexto("bullet speed:", -1.7, 0.1);
+	dibujaTexto("tipo disparo:", -1.7, -0.1);
+	dibujaTexto(pcharv, -1.7, 1);
+	dibujaTexto(pcharm, -1.7, 0.8);
+	dibujaTexto(pchard, -1.7, 0.6);
+	dibujaTexto(pchars, -1.7, 0.4);
+	dibujaTexto(pcharr, -1.7, 0.2);
+	dibujaTexto(pcharb, -1.7, 0.0);
+	switch (t)
+	{
+	case 0:
+		dibujaTexto("normal", -1.7, -0.2);
+		break;
+	case 1:
+		dibujaTexto("cannon", -1.7, -0.2);
+		break;
+	case 2:
+		dibujaTexto("ricochet", -1.7, -0.2);
+		break;
+	}
 }
 
 void Mundo::mueve()
@@ -148,6 +207,8 @@ bool Mundo::cargarNivel() {
 		cajas.Inicializa(3);
 	}
 	if (nivel == 4) {
+
+		tankJ.Inicializa(0.0f, -1.1f);
 		tanques.agregar(new tanqueEnemigoB(0.0f, 0.0f));
 
 		tanques.agregar(new tanqueEnemigoB(-1.1f, -0.5f));
@@ -157,10 +218,10 @@ bool Mundo::cargarNivel() {
 
 		tanques.agregar(new tanqueEnemigoB(1.1f, -0.5f));
 		tanques.agregar(new tanqueEnemigoB(1.1f, 0.5f));
-		tanques.agregar(new tanqueEnemigoB(1.1f, -1.1f));
+		tanques.agregar(new tanqueEnemigoB(1.6f, -1.1f));
 		tanques.agregar(new tanqueEnemigoB(1.1f, 1.1f));
 
-		tankJ.Inicializa(0.0f, -1.1f);
+		
 		contenedor.Inicializa(0);
 		cajas.Inicializa(4);
 	}

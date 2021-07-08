@@ -10,14 +10,37 @@ tanqueJugador::tanqueJugador():tanque(0.0f,0.0f,"imagenes/Jugador.png"){
 	vProyectil = 3;
 	daño = 1;
 	municion = 2;
+	tipo=0;
 }
 
 tanqueJugador::~tanqueJugador() {}
 
 void tanqueJugador::Dispara() {
-	if (municion >= proyectiles.getNum()) {
-		Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-		proyectiles.agregar(d);
+	switch (tipo) {
+	case 0:
+		if (municion >= proyectiles.getNum()) {
+			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(d);
+		}
+		break;
+	case 1:
+		if (municion >= proyectiles.getNum()) {
+			ProyectilCañon* c = new ProyectilCañon(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(c);
+		}
+		break;
+	case 2:
+		if (municion >= proyectiles.getNum()) {
+			ProyectilRicochet* r = new ProyectilRicochet(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(r);
+		}
+		break;
+	default:
+		if (municion >= proyectiles.getNum()) {
+			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+			proyectiles.agregar(d);
+		}
+		break;
 	}
 }
 
@@ -40,25 +63,6 @@ void tanqueJugador::Reset() {
 	daño = 1;
 	municion = 2;
 }
-
-
-//void tanqueJugador::mueveTecla(unsigned char key) {
-//	switch (key)
-//	{
-//	case GLUT_KEY_LEFT:
-//		posicion.x -= vel;
-//		break;
-//	case GLUT_KEY_RIGHT:
-//		posicion.x += vel;
-//		break;
-//	case GLUT_KEY_UP:
-//		posicion.y += vel;
-//		break;
-//	case GLUT_KEY_DOWN:
-//		posicion.y -= vel;
-//		break;
-//	}
-//}
 
 void tanqueJugador::mueveTecla(unsigned char key) {
 	switch (key)
@@ -83,3 +87,22 @@ void tanqueJugador::mueveTecla(unsigned char key) {
 }
 //habría que lograr que se moviese en diagonales también
 
+void tanqueJugador::setTipoDisparo(int type)
+{
+	tipo = type;
+}
+
+int tanqueJugador::getTipoDisparo()
+{
+	return tipo;
+}
+
+int tanqueJugador::getMunicion()
+{
+	return municion;
+}
+
+void tanqueJugador::aumentarMunicion()
+{
+	++municion;
+}

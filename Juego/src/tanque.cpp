@@ -19,10 +19,10 @@ tanque::tanque(float x, float y, const char* s) {
 
 	daño = 1;
 	nMaxRebotes = 2;
-    vProyectil = 3;
+	vProyectil = 3;
 }
 
-void tanque::Dibuja() const{
+void tanque::Dibuja() const {
 
 	//proyectil.dibuja();
 	proyectiles.dibuja();
@@ -35,7 +35,7 @@ void tanque::Dibuja() const{
 	glVertex2d(apuntado.x + posicion.x, apuntado.y + posicion.y);
 	glEnd();
 
-	Vector2D aux(-velocidad.x + velocidad.y,velocidad.x + velocidad.y);
+	Vector2D aux(-velocidad.x + velocidad.y, velocidad.x + velocidad.y);
 	aux = aux.unitario();
 	aux *= 0.08f;//0.08 tamaño del tanque
 
@@ -54,12 +54,8 @@ void tanque::Dibuja() const{
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 
-	/*glTexCoord2d(0, 0); glVertex2f(posicion.x - 0.06f, posicion.y + 0.06f);
-	glTexCoord2d(0, 1); glVertex2f(posicion.x - 0.06f, posicion.y - 0.06f);
-	glTexCoord2d(1, 1); glVertex2f(posicion.x + 0.06f, posicion.y - 0.06f);
-	glTexCoord2d(1, 0); glVertex2f(posicion.x + 0.06f, posicion.y + 0.06f);*/
-
 }
+
 void tanque::Mueve(float t) {
 	proyectiles.mueve(t);
 }
@@ -68,9 +64,18 @@ void tanque::setVel(float vx, float vy) {
 	velocidad.y = vy;
 }
 
+void tanque::aumentarVel()
+{
+	vel += 0.005f;
+}
+float tanque::getVel() {
+
+	return vel;
+}
+
 void tanque::setApuntado(float x, float y) {
 
-	apuntado.x = x - posicion.x; 
+	apuntado.x = x - posicion.x;
 	apuntado.y = y - posicion.y;
 	apuntado = apuntado.unitario() * 0.2f;//0.2 es el tamaño del cañon
 }
@@ -84,11 +89,11 @@ void tanque::setApuntado(Vector2D v) {
 
 void tanque::Dispara() {
 
-	Proyectil* d = new Proyectil(apuntado,posicion,daño,nMaxRebotes,vProyectil);
+	Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
 	proyectiles.agregar(d);
 }
 
-Vector2D tanque::getPos() const{
+Vector2D tanque::getPos() const {
 	return posicion;
 }
 
@@ -119,7 +124,7 @@ void tanque::aumentarVidaMax()
 
 void tanque::aumentarVida()
 {
-	if (vida<vidaMax)
+	if (vida < vidaMax)
 		++vida;
 }
 
@@ -128,6 +133,20 @@ void tanque::aumentarDaño()
 	++daño;
 }
 
+int tanque::getDaño()
+{
+	return daño;
+}
+
+float tanque::getvProyectil()
+{
+	return vProyectil;
+}
+
+void tanque::setvProyectil(float vel)
+{
+	vProyectil = vel;
+}
 void tanque::aumentarVproyectil(int v) {
 	vProyectil += v;
 }
@@ -136,5 +155,18 @@ int tanque::getVidaActual() const
 {
 	return vida;
 }
+
+
+int tanque::getnMaxRebotes()
+{
+	return nMaxRebotes;
+}
+
+void tanque::aumentarnMaxRebotes()
+{
+	if (nMaxRebotes < 6)
+		++nMaxRebotes;
+}
+
 
 

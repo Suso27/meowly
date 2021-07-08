@@ -18,6 +18,7 @@ void Coordinador::dibuja()
 	}
 	else if (estado == JUEGO)
 	{
+		mundo.dibujaStats();
 		mundo.dibuja();
 	}
 	else if (estado == PAUSA)
