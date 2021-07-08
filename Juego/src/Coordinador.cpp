@@ -1,6 +1,8 @@
 #include "Coordinador.h"
 
-Coordinador::Coordinador():estado(INICIO){}
+Coordinador::Coordinador():estado(INICIO){
+	ETSIDI::playMusica("sonidos/Colonial.wav");
+}
 
 Coordinador::~Coordinador(){
 
@@ -10,6 +12,7 @@ void Coordinador::dibuja()
 	if (estado == INICIO) {
 		mundo.inicializa();
 		mundo.dibuja();
+		
 
 
 		dibujaCartel("imagenes/controles.png", -0.8f, -0.2f, 0.8f, -1.0f);
@@ -47,8 +50,9 @@ void Coordinador::mueve()
 {
 
 	if (estado == INICIO) {
-		ETSIDI::stopMusica();
+		
 		mundo.mueve();
+		
 	}
 	if (estado == JUEGO)
 	{
@@ -79,6 +83,7 @@ void Coordinador::tecla(unsigned char key)
 			Vector2D raton = mundo.getRaton();
 			if (raton.x < 0.5 && raton.x > -0.5 && raton.y < 0.9 && raton.y > 0.6) {
 				estado = JUEGO;
+				ETSIDI::stopMusica();
 				ETSIDI::playMusica("sonidos/MilkyWay.wav", true);
 			}
 			else if (raton.x < 0.5 && raton.x > -0.5 && raton.y < 0.6 && raton.y > 0.3) {
@@ -111,6 +116,8 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == GAMEOVER)
 	{
 		if (key == 'c') {
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("sonidos/Colonial.wav");
 			estado = INICIO;
 			mundo.reset();
 		}
@@ -118,6 +125,8 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == FIN)
 	{
 		if (key == 'c') {
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("sonidos/Colonial.wav");
 			estado = INICIO;
 			mundo.reset();
 		}
