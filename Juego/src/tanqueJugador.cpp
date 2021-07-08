@@ -6,7 +6,7 @@ tanqueJugador::tanqueJugador():tanque(0.0f,0.0f,"imagenes/Jugador.png"){
 	color.set(132, 134, 59);//233,208,154
 	vida = 3;
 	vidaMax = 3;
-	nMaxRebotes = 1;
+	nMaxRebotes = 2;
 	vProyectil = 3;
 	daño = 1;
 	municion = 2;
@@ -15,31 +15,9 @@ tanqueJugador::tanqueJugador():tanque(0.0f,0.0f,"imagenes/Jugador.png"){
 tanqueJugador::~tanqueJugador() {}
 
 void tanqueJugador::Dispara() {
-	switch (tipo) {
-	case 0:
-		if (municion >= proyectiles.getNum()) {
-			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-			proyectiles.agregar(d);
-		}
-		break;
-	case 1:
-		if (municion >= proyectiles.getNum()) {
-			ProyectilCañon* c = new ProyectilCañon(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-			proyectiles.agregar(c);
-		}
-		break;
-	case 2:
-		if (municion >= proyectiles.getNum()) {
-			ProyectilRicochet* r = new ProyectilRicochet(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-			proyectiles.agregar(r);
-		}
-		break;
-	default:
-		if (municion >= proyectiles.getNum()) {
-			Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
-			proyectiles.agregar(d);
-		}
-		break;
+	if (municion >= proyectiles.getNum()) {
+		Proyectil* d = new Proyectil(apuntado, posicion, daño, nMaxRebotes, vProyectil);
+		proyectiles.agregar(d);
 	}
 }
 
@@ -47,7 +25,20 @@ void tanqueJugador::Inicializa(float x,float y) {
 	posicion.x = x;
 	posicion.y = y;
 	proyectiles.destruirContenido();
+}
 
+void tanqueJugador::Reset() {
+	posicion.x = 0.0f;
+	posicion.y = 0.0f;
+	proyectiles.destruirContenido();
+	municion = 3;
+	vel = 0.01f;
+	vida = 3;
+	vidaMax = 3;
+	nMaxRebotes = 2;
+	vProyectil = 3;
+	daño = 1;
+	municion = 2;
 }
 
 
@@ -90,25 +81,5 @@ void tanqueJugador::mueveTecla(unsigned char key) {
 		break;
 	}
 }
-
-
-void tanqueJugador::setTipoDisparo(int type)
-{
-	tipo = type;
-}
-
-int tanqueJugador::getTipoDisparo()
-{
-	return tipo;
-}
-
-int tanqueJugador::getMunicion()
-{
-	return municion;
-}
-
-void tanqueJugador::aumentarMunicion()
-{
-	++municion;
-}
+//habría que lograr que se moviese en diagonales también
 

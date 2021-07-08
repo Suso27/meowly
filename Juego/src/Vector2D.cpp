@@ -6,7 +6,7 @@ Vector2D::Vector2D(float xv, float yv)
 	y = yv;
 }
 
-//Vector2D::~Vector2D(){}
+Vector2D::~Vector2D(){}
 
 float Vector2D::modulo() const
 {

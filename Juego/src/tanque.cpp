@@ -60,22 +60,12 @@ void tanque::Dibuja() const{
 	glTexCoord2d(1, 0); glVertex2f(posicion.x + 0.06f, posicion.y + 0.06f);*/
 
 }
-
 void tanque::Mueve(float t) {
 	proyectiles.mueve(t);
 }
 void tanque::setVel(float vx, float vy) {
 	velocidad.x = vx;
 	velocidad.y = vy;
-}
-
-void tanque::aumentarVel()
-{
-	vel += 0.005f;
-}
-float tanque::getVel() {
-	
-	return vel;
 }
 
 void tanque::setApuntado(float x, float y) {
@@ -138,20 +128,6 @@ void tanque::aumentarDaño()
 	++daño;
 }
 
-int tanque::getDaño()
-{
-	return daño;
-}
-
-float tanque::getvProyectil()
-{
-	return vProyectil;
-}
-
-void tanque::setvProyectil(float vel)
-{
-	vProyectil = vel;
-}
 void tanque::aumentarVproyectil(int v) {
 	vProyectil += v;
 }
@@ -161,15 +137,4 @@ int tanque::getVidaActual() const
 	return vida;
 }
 
-
-int tanque::getnMaxRebotes()
-{
-	return nMaxRebotes;
-}
-
-void tanque::aumentarnMaxRebotes()
-{
-	if (nMaxRebotes < 6)
-		++nMaxRebotes;
-}
 

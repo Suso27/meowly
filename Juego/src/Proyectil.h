@@ -5,7 +5,7 @@
 class Proyectil
 {
 	friend class Interaccion;
-protected:
+private:
 	float radio;
 	int rebotes;//contador de los rebotes
 
@@ -28,6 +28,5 @@ public:
 	//bool getDisparado();//también innecesario
 	void setDaño(int dmg);
 	Vector2D getPos() const;
-	float getRadio();
 };
 

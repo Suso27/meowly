@@ -1,8 +1,7 @@
 #pragma once
 #define MAX_PROYECTILES 100
 #include "Proyectil.h"
-#include "ProyectilCañon.h"
-#include "ProyectilRicochet.h"
+
 
 class ListaProyectiles
 {

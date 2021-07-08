@@ -77,8 +77,3 @@ void Proyectil::setDaño(int dmg) {
 Vector2D Proyectil::getPos() const{
 	return posicion;
 }
-
-float Proyectil::getRadio()
-{
-	return radio;
-}

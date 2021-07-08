@@ -12,10 +12,9 @@ private:
 	Pared pared_izq;
 	Pared pared_dcha;
 
-	const char* textura;
 public:
 	    Caja();
-		Caja(float l1x, float l1y, float l2x, float l2y, const char* texture);
+		Caja(float l1x, float l1y, float l2x, float l2y);
 		void Inicializa(float l1x, float l1y, float l2x, float l2y);
 		void Dibuja() const;
 		friend class Interaccion;

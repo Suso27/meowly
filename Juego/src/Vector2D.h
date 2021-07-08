@@ -9,7 +9,7 @@ public:
 
 public:
 	Vector2D(float xv = 0.0f, float yv = 0.0f); // (1)constructor
-	//~Vector2D();
+	~Vector2D();
 	float modulo() const; // (2) modulo del vector
 	float argumento() const; // (3) argumento del vector
 	Vector2D unitario(); // (4) devuelve un vector unitario
