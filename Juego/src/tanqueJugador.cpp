@@ -65,6 +65,7 @@ void tanqueJugador::Reset() {
 	vProyectil = 3;
 	daño = 1;
 	municion = 2;
+	tipo = 0;
 }
 
 void tanqueJugador::mueveTecla(unsigned char key) {
