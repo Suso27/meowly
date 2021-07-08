@@ -76,6 +76,8 @@ void Mundo::dibujaStats()
 		break;
 	}
 }
+
+
  
 void Mundo::mueve()
 {
