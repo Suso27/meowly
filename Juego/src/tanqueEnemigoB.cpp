@@ -16,7 +16,7 @@ void tanqueEnemigoB::Inicializa() {
 	vel = 0.003f;
 	//proyectiles.setMunicion(30);//tiene que ser menor que MAX_POYECTILES
 	color.set(114, 114, 142);
-	vida = 1;
+	vida = 3;
 	cadencia = 2.0f; //segundos
 	nMaxRebotes = 1;
 }

@@ -11,6 +11,7 @@ void tanqueEnemigo::Mueve(float t,Vector2D posJ) {
 	if (tRecarga > cadencia) {
 		tanque::Dispara();
 		tRecarga = 0;
+		ETSIDI::play("sonidos/sfx_wpn_laser8.wav");
 	}
 	else tRecarga += t;
 

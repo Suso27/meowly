@@ -1,7 +1,7 @@
 #include "BulletSpeedUp.h"
 void BulletSpeedUp::aplicarEfecto(tanqueJugador& j)
 {
-	j.aumentarVproyectil(2);
+	j.aumentarVproyectil(1);
 }
 
 BulletSpeedUp::BulletSpeedUp() {

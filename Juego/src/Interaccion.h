@@ -9,7 +9,7 @@ public:
 	Interaccion();
 
 	static bool colision(tanque&, Pared&);
-	static bool colision(Objeto o, tanqueJugador j);
+	static bool colision(Objeto& o, tanqueJugador& j);
 	static void colision(ListaObjetos& lo, tanqueJugador& j);
 	static bool colision(Proyectil& p, tanque& t);
 	static bool colision(ListaProyectiles& l, tanque& t);

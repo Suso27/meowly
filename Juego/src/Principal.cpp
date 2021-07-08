@@ -44,7 +44,6 @@ int main(int argc, char* argv[])
 	//glutSpecialFunc(onSpecialKeyboardDown);
 	glutPassiveMotionFunc(getMouse);
 	glutMouseFunc(onMouseClicked);
-
 	//juego.inicializa();
 
 	//pasarle el control a GLUT,que llamara a los callbacks
@@ -87,8 +86,8 @@ void OnTimer(int value)
 }
 
 void CreateObject(int value) { //llama a la función de juego para crear objetos cada 10s
-	juego.crearObjeto();
 
+		juego.crearObjeto();
 	//no borrar estas lineas
 	glutTimerFunc(10000, CreateObject, 0);
 	glutPostRedisplay();

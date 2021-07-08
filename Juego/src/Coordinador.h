@@ -19,4 +19,5 @@ public:
 	void setRaton(int x, int y);
 	void crearObjeto();
 	void dibujaCartel(const char*,float l1x,float l1y,float l2x,float l2y);
+
 };

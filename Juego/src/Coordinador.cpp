@@ -47,6 +47,7 @@ void Coordinador::mueve()
 {
 
 	if (estado == INICIO) {
+		ETSIDI::stopMusica();
 		mundo.mueve();
 	}
 	if (estado == JUEGO)
@@ -54,11 +55,16 @@ void Coordinador::mueve()
 		mundo.mueve();
 		if (mundo.getNumTanques() == 0)
 		{
-			if(!mundo.cargarNivel())
-			estado = FIN;
+			if (!mundo.cargarNivel()) {
+				ETSIDI::stopMusica();
+				ETSIDI::playMusica("sonidos/Mantis.wav", true);
+				estado = FIN;
+			}
 		}
 		if (mundo.getVida()==0 || mundo.getVida() < 0)
 		{
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("sonidos/Engi.wav", true);
 			estado = GAMEOVER;
 		}
 	}
@@ -73,6 +79,7 @@ void Coordinador::tecla(unsigned char key)
 			Vector2D raton = mundo.getRaton();
 			if (raton.x < 0.5 && raton.x > -0.5 && raton.y < 0.9 && raton.y > 0.6) {
 				estado = JUEGO;
+				ETSIDI::playMusica("sonidos/MilkyWay.wav", true);
 			}
 			else if (raton.x < 0.5 && raton.x > -0.5 && raton.y < 0.6 && raton.y > 0.3) {
 				exit(0);
@@ -83,11 +90,14 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == JUEGO)
 	{
 		mundo.tecla(key);
-		if (key == 'p')
-			estado = PAUSA;
+		if (key == 'p') {
+		ETSIDI::stopMusica();
+		estado = PAUSA;
+		}
 		if (key == 'n') {
 			if (!mundo.cargarNivel()) {
 				estado = FIN;
+				
 			}
 		}
 		if (key == 'o')
@@ -96,6 +106,7 @@ void Coordinador::tecla(unsigned char key)
 	else if (estado == PAUSA)
 	{
 		estado = JUEGO;
+		ETSIDI::playMusica("sonidos/MilkyWay.wav");
 	}
 	else if (estado == GAMEOVER)
 	{
@@ -136,3 +147,6 @@ void Coordinador::dibujaCartel(const char* s, float l1x, float l1y, float l2x, f
 	glEnable(GL_LIGHTING);
 	glDisable(GL_TEXTURE_2D);
 }
+
+
+

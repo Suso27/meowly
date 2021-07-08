@@ -1,4 +1,5 @@
 #include "Interaccion.h"
+
 Interaccion::Interaccion() {};
 
 bool Interaccion::colision(tanque& t, Pared& p) {
@@ -13,11 +14,13 @@ bool Interaccion::colision(tanque& t, Pared& p) {
 	return false;
 }
 
-bool Interaccion::colision(Objeto o, tanqueJugador j)
+bool Interaccion::colision(Objeto& o, tanqueJugador& j)
 {
 	float dist = o.distancia(j.getPos());
-	if (dist < 0.09f)
+	if (dist < 0.12f) {
+		ETSIDI::play("sonidos/sfx_coin_double7.wav");
 		return true;
+	}
 	return false;
 
 	
@@ -36,7 +39,8 @@ void Interaccion::colision(ListaObjetos& lo, tanqueJugador& j)
 
 bool Interaccion::colision(Proyectil& p, tanque& t){
 	if ((t.posicion - p.posicion).modulo() < (0.04+p.getRadio())) {
-		t.vida--;
+		t.vida -= p.daño;
+		ETSIDI::play("sonidos/sfx_deathscream_robot1.wav");
 		return true;
 	}
 	else return false;
@@ -71,7 +75,7 @@ void Interaccion::colision(tanqueJugador& tJ, ListaTanques& lt) {
 
 	for (int i = 0; i < lt.numero; i++) {
 		if (colision(tJ, *lt[i])) {
-			if (lt[i]->vida == 0) lt.eliminar(i);
+			if (lt[i]->vida <= 0) lt.eliminar(i);
 		}
 	}
 
@@ -83,6 +87,7 @@ void Interaccion::colision(ListaProyectiles& l1, ListaProyectiles& l2) {
 	while(i<l1.numero) {
 		while (j<l2.numero){
 			if ((l1[i].posicion - l2[j].posicion).modulo() < (l1[i].getRadio()+l2[j].getRadio())) {
+				ETSIDI::play("sonidos/sfx_sounds_impact4.wav");
 				l1.eliminar(i);
 				l2.eliminar(j);
 				i--;
@@ -129,6 +134,8 @@ void Interaccion::rebote(ListaProyectiles& l, Caja& c) {
 			if(l.lista[i]->rebotes> l.lista[i]->nMaxRebotes) {
 				l.eliminar(i);
 			}
+			else
+				ETSIDI::play("sonidos/sfx_sounds_impact13.wav");
 		}
 	}
 }

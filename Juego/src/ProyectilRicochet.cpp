@@ -5,6 +5,6 @@ ProyectilRicochet::ProyectilRicochet(Vector2D vel, Vector2D pos, int d, int n, f
 	nMaxRebotes = n*2;
 	daño = d;
 	posicion = pos;
-	velocidad = vel * velModulo * 1.5;
+	velocidad = vel * velModulo * 1.75;
 	radio = 0.01f;
 };
