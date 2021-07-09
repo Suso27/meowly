@@ -101,12 +101,17 @@ void Coordinador::tecla(unsigned char key)
 		}
 		if (key == 'n') {
 			if (!mundo.cargarNivel()) {
+				ETSIDI::stopMusica();
+				ETSIDI::playMusica("sonidos/Mantis.wav", true);
 				estado = FIN;
 				
 			}
 		}
-		if (key == 'o')
+		if (key == 'o') {
+			ETSIDI::stopMusica();
+			ETSIDI::playMusica("sonidos/Engi.wav", true);
 			estado = GAMEOVER;
+		}
 	}
 	else if (estado == PAUSA)
 	{
